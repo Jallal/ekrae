@@ -22,7 +22,7 @@
 <body>
 
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <a class="navbar-brand" href="#">Ekrae</a>
+    <a class="navbar-brand" href="welcome"><h1>Ekrae</h1></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -46,6 +46,18 @@
 </nav>
 
 <main role="main" class="container">
+    <div class="jumbotron">
+        <a class="navbar-brand" href="#"><h1>in Place merge Two sorted arrays</h1></a>
+        <p class="lead">This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.</p>
+    </div>
+    <div class="jumbotron">
+        <h1>Navbar example</h1>
+        <p class="lead">This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.</p>
+    </div>
+    <div class="jumbotron">
+        <h1>Navbar example</h1>
+        <p class="lead">This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.</p>
+    </div>
     <div class="jumbotron">
         <h1>Navbar example</h1>
         <p class="lead">This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.</p>

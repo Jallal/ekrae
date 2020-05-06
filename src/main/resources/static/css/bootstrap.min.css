@@ -4894,6 +4894,12 @@ tbody.collapse.show {
     background-color: #e9ecef;
     border-radius: .3rem;
 }
+.jumbotron_article {
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    background-color: #ffffff;
+    border-radius: .3rem;
+}
 
 @media (min-width: 576px) {
     .jumbotron {
@@ -9068,6 +9074,77 @@ a.text-dark:focus, a.text-dark:hover {
     .table-bordered td, .table-bordered th {
         border: 1px solid #ddd !important
     }
+}
+
+/* Article title*/
+.reader-article-header__title {
+    font-weight: 700;
+}
+.t-black {
+    color: rgba(0,0,0,.9);
+}
+.t-normal {
+    font-weight: 400;
+}
+.t-40 {
+    font-size: 4rem;
+    line-height: 1.2;
+}
+/*Publisher date*/
+.reader-article-header__meta {
+    list-style: none;
+    display: flex;
+}
+.t-14 {
+    font-size: 1.4rem;
+    line-height: 1.42857;
+}
+.t-black--light {
+    color: rgba(0,0,0,.6);
+}
+.t-normal {
+    font-weight: 400;
+}
+.mv4 {
+    margin-bottom: 16px!important;
+}
+/*Author information*/
+.reader-author-info__container {
+    border-bottom: 1px solid rgba(0,0,0,.15);
+    padding: 12px 0;
+    z-index: 1;
+}
+reader-article-content q::before, .reader-author-info__container, .reader-social-details__likes-list {
+    border-top: 1px solid rgba(0,0,0,.15);
+}
+.justify-space-between {
+    justify-content: space-between!important;
+}
+.display-flex {
+    display: flex!important;
+}
+.align-items-center {
+    align-items: center!important;
+}
+.artdeco-entity-lockup {
+    display: flex;
+}
+.ml2 {
+    margin-left: 8px!important;
+}
+.reader-author-info__cta {
+    display: none;
+}
+.reader-article-content q::before, .reader-author-info__container, .reader-social-details__likes-list {
+    border-top: 1px solid rgba(0,0,0,.15);
+}
+abbr, address, article, aside, audio, b, blockquote, body, canvas, caption, cite, code, dd, del, details, dfn, div, dl, dt, em, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, p, pre, q, samp, section, small, span, strong, summary, table, tbody, td, tfoot, th, thead, time, tr, ul, var, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
 }
 
 /*# sourceMappingURL=bootstrap.min.css.map */
