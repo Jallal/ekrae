@@ -1,41 +1,43 @@
-<html lang="en"><head>
+<html lang="en">
+<head>
     <script src="/js/popper.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
-    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
-
-    <title>Fixed top navbar example for Bootstrap</title>
-
+    <title>In Place merge Two sorted arrays</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/navbar-fixed/">
 
     <!-- Bootstrap core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="navbar-top-fixed.css" rel="stylesheet">
 </head>
 
 <body>
 
+<-- Start of header -->
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <a class="navbar-brand" href="welcome"><h1>Ekrae</h1></a>
+    <br>&#8195;</br>
+    <br>&#8195;</br>
+    <a class="navbar-brand" href="welcome"><h1><strong>Home</strong></h1></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
+    <br>&#8195;</br>
+    <br>&#8195;</br>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="#"> <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"></a>
+                <a class="nav-link" href="#"><strong>Java</strong></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link disabled" href="#"></a>
+                <a class="nav-link" href="#"><strong>Springboot</strong></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"><strong>Interviews</strong></a>
             </li>
         </ul>
         <form class="form-inline mt-2 mt-md-0">
@@ -44,18 +46,17 @@
         </form>
     </div>
 </nav>
+<-- End of header -->
 
 <main role="main" class="container">
     <div class="jumbotron_article">
         <!--Aticle title-->
-        <h1 class="reader-article-header__title t-40 t-black t-normal pv4"> in Place merge Two sorted arrays&nbsp;Last</h1>
+        <h1 class="reader-article-header__title t-40 t-black t-normal pv4"> In Place merge Two sorted arrays&nbsp;</h1>
         <!-- Article publisher date-->
         <br>
         <ul class="reader-article-header__meta t-14 t-black--light t-normal mv4">
             <li>
-                <time class="reader-article-header__publish-date">
-                    Published on May 10, 2017
-                </time>
+                <time class="reader-article-header__publish-date">Published on May 10, 2017</time>
             </li>
             </ul>
         <!-- Author information -->
@@ -74,7 +75,6 @@
                 </div>
                 </a>
                 </div>
-
                     <div id="ember59" class="reader-author-info__content artdeco-entity-lockup__content ember-view">
                     <div id="ember60" class="reader-author-info__author-lockup--flex artdeco-entity-lockup__title ember-view">
                         <a data-control-name="read_profile" href="/in/tom-goldenberg/" id="ember61" class="reader-author-info__meta-name display-flex align-items-center ember-view">
@@ -102,35 +102,79 @@
             </div>
         </div>
         <!-- Author information end -->
-
-        <p class="lead">
-
-            This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.
-            This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.
-            This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.
-            This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.
-            This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.
-            This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.
-            This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.
-            This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.
-            This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.
-            This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.
-            This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.
-            This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.
-            This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.
-            This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.
-            This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.
-            This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.
-            This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.
-            This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.
-            This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.
-            This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.
-        <h2> More stuff</h2>
-        This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.
-        This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.
-        This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.
-
+<!-- start of paragraph section -->
+        <br>&#8195;</br>
+        <h2><strong>Problem statement</strong></h2>
+        <br>&#8195;</br>
+        <p>
+           Given two sorted arrays X[] and Y[] of size m and n each. Merge elemnets of X and with the elements of Y by maintaining the sorted order.
         </p>
+            <br>&#8195;</br>
+        <h2><strong>Solution</strong></h2>
+        <br>&#8195;</br>
+        <p>
+        This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.
+        This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.
+        </p>
+        <!--Start oc code section -->
+        <br>&#8195;</br>
+        <div class="code_section">
+            <span spellcheck="false">
+  import java.util.Arrays;
+
+class Merge {
+	// in-place merge two sorted arrays X[] and Y[]
+	// invariant: X[] and Y[] are sorted at any point
+	public static void merge(int[] X, int[] Y){
+
+		int m = X.length;
+		int n = Y.length;
+		// consider each element X[i] of array X and ignore the element
+		// if it is already in correct order else swap it with next smaller
+		// element which happens to be first element of Y
+		for (int i = 0; i < m; i++){
+			// compare current element of X[] with first element of Y[]
+			if (X[i] > Y[0]){
+				// swap (X[i], Y[0])
+				int temp = X[i];
+				X[i] = Y[0];
+				Y[0] = temp;
+				int first = Y[0];
+				// move Y[0] to its correct position to maintain sorted
+				// order of Y[]. Note: Y[1..n-1] is already sorted
+				int k;
+				for (k = 1; k < n && Y[k] < first; k++) {
+					Y[k - 1] = Y[k];
+				}
+				Y[k - 1] = first;
+			}
+		}
+	}
+
+	// main function
+}
+            </span>
+        </div>
+        <br>&#8195;</br>
+        <!--End oc code section -->
+        <p>This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.</p>
+        <!--Start oc code section -->
+        <br>&#8195;</br>
+        <div class="code_section">
+            <span spellcheck="false">
+	// main function
+	public static void main (String[] args){
+
+		int[] X = { 1, 4, 7, 8, 10 };
+		int[] Y = { 2, 3, 9 };
+		merge(X, Y);
+		System.out.println("X: " + Arrays.toString(X));
+		System.out.println("Y: " + Arrays.toString(Y));
+	}
+            </span>
+        </div>
+        <br>&#8195;</br>
+        <!--End oc code section -->
     </div>
 </main>
 

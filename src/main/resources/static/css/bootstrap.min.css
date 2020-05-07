@@ -7413,7 +7413,8 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
     top: 0;
     right: 0;
     left: 0;
-    z-index: 1030
+    z-index: 1030;
+    height: 80px
 }
 
 .fixed-bottom {
@@ -9146,5 +9147,19 @@ abbr, address, article, aside, audio, b, blockquote, body, canvas, caption, cite
     vertical-align: baseline;
     background: transparent;
 }
+/* section with actual code in the page*/
+
+.code_section {
+    background: #e6e9ec;
+    color: rgba(0,0,0,.85);
+    display: block;
+    font-size: 1 rem;
+    font-family: monospace;
+    line-height: 0.1 rem;
+    padding: 0 3.2rem 3.2rem;
+    white-space: pre;
+    overflow-x: auto;
+}
+
 
 /*# sourceMappingURL=bootstrap.min.css.map */
