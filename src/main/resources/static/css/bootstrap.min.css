@@ -9156,10 +9156,37 @@ abbr, address, article, aside, audio, b, blockquote, body, canvas, caption, cite
     font-size: 1 rem;
     font-family: monospace;
     line-height: 0.1 rem;
-    padding: 0 3.2rem 3.2rem;
+    padding-top: 0px;
+    padding-right: 3.2rem;
+    padding-bottom: 0.2rem;
+    padding-left: 3.2rem;
     white-space: pre;
     overflow-x: auto;
 }
 
+/* avatar image */
+.presence-entity {
+    display: flex;
+    position: relative;
+}
+.presence-entity--size-4 {
+    width: 56px;
+    height: 56px;
+}
+.feed-shared-avatar-image {
+    overflow: hidden;
+    flex-shrink: 0;
+    line-height: 0;
+}
+.b0 {
+    border: 0!important;
+}
+.ml2 {
+    margin-left: 8px!important;
+}
+.artdeco-entity-lockup__image {
+    position: relative;
+    flex-shrink: 0;
+}
 
 /*# sourceMappingURL=bootstrap.min.css.map */

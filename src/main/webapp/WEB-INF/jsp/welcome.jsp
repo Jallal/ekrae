@@ -8,7 +8,7 @@
     <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
     <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
 
-    <title>Fixed top navbar example for Bootstrap</title>
+    <title>Ekrae your programing home</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/navbar-fixed/">
 
@@ -33,16 +33,16 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="#"> <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href=""> <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><strong>Java</strong></a>
+                <a class="nav-link" href="Java"><strong>Java</strong></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><strong>Springboot</strong></a>
+                <a class="nav-link" href="Springboot"><strong>Springboot</strong></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><strong>Interviews</strong></a>
+                <a class="nav-link" href="Interviews"><strong>Interviews</strong></a>
             </li>
         </ul>
         <form class="form-inline mt-2 mt-md-0">

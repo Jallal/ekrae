@@ -16,5 +16,22 @@ public class MainController {
 		return "article";
 
 	}
+
+	@RequestMapping("/Interviews")
+	public String getInterviewsList(){
+		return "interviewsList";
+
+	}
+	@RequestMapping("/Java")
+	public String getJavaList(){
+		return "JavaList";
+
+	}
+
+	@RequestMapping("/Springboot")
+	public String getSpringbootList(){
+		return "springbootList";
+
+	}
 	
 }

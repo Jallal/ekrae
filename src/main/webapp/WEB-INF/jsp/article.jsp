@@ -62,13 +62,13 @@
         <!-- Author information -->
         <div class="reader-author-info__container-wrapper">
             <div class="reader-author-info__container reader-author-info__container--reactions-enable">
-                <div id="ember51" class="display-flex align-items-center justify-space-between ember-view"
-                ><div id="ember52" class="artdeco-entity-lockup artdeco-entity-lockup--size-4 ember-view">
+                <div id="ember51" class="display-flex align-items-center justify-space-between ember-view">
+                    <div id="ember52" class="artdeco-entity-lockup artdeco-entity-lockup--size-4 ember-view">
                     <div id="ember53" class="artdeco-entity-lockup__image artdeco-entity-lockup__image--type-circle ember-view" type="circle">
-                        <a data-control-name="read_profile" href="/in/tom-goldenberg/" id="ember54" class="reader-author-info__meta-image ember-view">
+                        <a data-control-name="read_profile" href="" id="ember54" class="reader-author-info__meta-image ember-view">
                             <div id="ember55" class="ml2 feed-shared-avatar-image b0 member ember-view">
                     <div id="ember56" class="presence-entity presence-entity--size-4 ember-view">
-                        <img title="Tom Goldenberg" src="https://media-exp1.licdn.com/dms/image/C4E03AQFf7CKFhFM6LQ/profile-displayphoto-shrink_100_100/0?e=1594252800&amp;v=beta&amp;t=po4_qdp8Qty6p_dJRdyjMrQi4KxvUvPMeQvJqC5u9j4" loading="lazy" alt="Tom Goldenberg" id="ember57" class="avatar member EntityPhoto-circle-4 presence-entity__image EntityPhoto-circle-4 lazy-image ember-view">
+                        <img title="Tom Goldenberg" src="images/rick.jpeg" loading="lazy" alt="Tom Goldenberg" id="ember57" class="avatar member EntityPhoto-circle-4 presence-entity__image EntityPhoto-circle-4 lazy-image ember-view">
                     <div id="ember58" class=" presence-entity__indicator presence-entity__indicator--size-4 presence-indicator hidden presence-indicator--size-4 ember-view">
 <span class="visually-hidden">
   </span></div></div>
@@ -77,11 +77,11 @@
                 </div>
                     <div id="ember59" class="reader-author-info__content artdeco-entity-lockup__content ember-view">
                     <div id="ember60" class="reader-author-info__author-lockup--flex artdeco-entity-lockup__title ember-view">
-                        <a data-control-name="read_profile" href="/in/tom-goldenberg/" id="ember61" class="reader-author-info__meta-name display-flex align-items-center ember-view">
-                        <h2 class="reader-author-info__text reader-author-info__name t-16 t-bold reader-author-info__meta-author-detail--has-hover mr2">&#8195;Tom Goldenberg</h2></a></div>
+                        <a data-control-name="read_profile" href="" id="ember61" class="reader-author-info__meta-name display-flex align-items-center ember-view">
+                        <h2 class="reader-author-info__text reader-author-info__name t-16 t-bold reader-author-info__meta-author-detail--has-hover mr2">&#8195;Jallal Elhazzat</h2></a></div>
                     <div id="ember62" class="artdeco-entity-lockup__subtitle ember-view">
                     <div id="ember63" class="t-black--light ember-view">
-                    <span class="lt-line-clamp__line lt-line-clamp__line--last">&#8195;LinkedIn Top Voice | Junior Principal at QuantumBlack, a McKinsey Company</span>
+                    <span class="lt-line-clamp__line lt-line-clamp__line--last">&#8195;Software Engineer | Scholar and technology enthusiast </span>
                     </span>
                     </div>
                 </div>
@@ -105,43 +105,34 @@
 <!-- start of paragraph section -->
         <br>&#8195;</br>
         <h2><strong>Problem statement</strong></h2>
-        <br>&#8195;</br>
+        <br>&#8201;</br>
         <p>
-           Given two sorted arrays X[] and Y[] of size m and n each. Merge elemnets of X and with the elements of Y by maintaining the sorted order.
+           Given two sorted arrays X and Y of size m and n each. Merge elemnets of X and with the elements of Y by maintaining the sorted order. the conversion should be done in place and whithout using any other data structuress.
+        for example, input : X = {1,4,7,8,10} and Y = {2,3,9} will show this output X = {1,2,3,4,7} and Y = {8,9,10}
         </p>
             <br>&#8195;</br>
         <h2><strong>Solution</strong></h2>
-        <br>&#8195;</br>
+        <br>&#8201;</br>
         <p>
-        This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.
-        This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.
+            The idea is very simple. We consider each element of array X and ignore element if it's already correct else we swap
+            it with the smallest element which happens to be first element of Y. After swaoing we move the element to it correct position
+            in Y to maintain the sorted order. The merge process is almost similar to merge routine of merge sort algorithem.
+            the only difference is that we are using auxiliary array for merging.
         </p>
         <!--Start oc code section -->
         <br>&#8195;</br>
         <div class="code_section">
-            <span spellcheck="false">
   import java.util.Arrays;
-
-class Merge {
-	// in-place merge two sorted arrays X[] and Y[]
-	// invariant: X[] and Y[] are sorted at any point
+  public class Merge {
 	public static void merge(int[] X, int[] Y){
-
 		int m = X.length;
 		int n = Y.length;
-		// consider each element X[i] of array X and ignore the element
-		// if it is already in correct order else swap it with next smaller
-		// element which happens to be first element of Y
 		for (int i = 0; i < m; i++){
-			// compare current element of X[] with first element of Y[]
 			if (X[i] > Y[0]){
-				// swap (X[i], Y[0])
 				int temp = X[i];
 				X[i] = Y[0];
 				Y[0] = temp;
 				int first = Y[0];
-				// move Y[0] to its correct position to maintain sorted
-				// order of Y[]. Note: Y[1..n-1] is already sorted
 				int k;
 				for (k = 1; k < n && Y[k] < first; k++) {
 					Y[k - 1] = Y[k];
@@ -150,18 +141,15 @@ class Merge {
 			}
 		}
 	}
-
 	// main function
 }
-            </span>
         </div>
         <br>&#8195;</br>
         <!--End oc code section -->
         <p>This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.</p>
         <!--Start oc code section -->
         <br>&#8195;</br>
-        <div class="code_section">
-            <span spellcheck="false">
+        <div class="code_section"  spellcheck="false">
 	// main function
 	public static void main (String[] args){
 
@@ -171,7 +159,6 @@ class Merge {
 		System.out.println("X: " + Arrays.toString(X));
 		System.out.println("Y: " + Arrays.toString(Y));
 	}
-            </span>
         </div>
         <br>&#8195;</br>
         <!--End oc code section -->
