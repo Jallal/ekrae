@@ -20,7 +20,8 @@
     <br>&#8195;</br>
     <br>&#8195;</br>
     <a class="navbar-brand" href="welcome"><h1><strong>Home</strong></h1></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <br>&#8195;</br>
@@ -58,117 +59,148 @@
             <li>
                 <time class="reader-article-header__publish-date">Published on May 10, 2017</time>
             </li>
-            </ul>
+        </ul>
         <!-- Author information -->
         <div class="reader-author-info__container-wrapper">
             <div class="reader-author-info__container reader-author-info__container--reactions-enable">
                 <div id="ember51" class="display-flex align-items-center justify-space-between ember-view">
                     <div id="ember52" class="artdeco-entity-lockup artdeco-entity-lockup--size-4 ember-view">
-                    <div id="ember53" class="artdeco-entity-lockup__image artdeco-entity-lockup__image--type-circle ember-view" type="circle">
-                        <a data-control-name="read_profile" href="" id="ember54" class="reader-author-info__meta-image ember-view">
-                            <div id="ember55" class="ml2 feed-shared-avatar-image b0 member ember-view">
-                    <div id="ember56" class="presence-entity presence-entity--size-4 ember-view">
-                        <img title="Tom Goldenberg" src="images/rick.jpeg" loading="lazy" alt="Tom Goldenberg" id="ember57" class="avatar member EntityPhoto-circle-4 presence-entity__image EntityPhoto-circle-4 lazy-image ember-view">
-                    <div id="ember58" class=" presence-entity__indicator presence-entity__indicator--size-4 presence-indicator hidden presence-indicator--size-4 ember-view">
-<span class="visually-hidden">
-  </span></div></div>
-                </div>
-                </a>
-                </div>
-                    <div id="ember59" class="reader-author-info__content artdeco-entity-lockup__content ember-view">
-                    <div id="ember60" class="reader-author-info__author-lockup--flex artdeco-entity-lockup__title ember-view">
-                        <a data-control-name="read_profile" href="" id="ember61" class="reader-author-info__meta-name display-flex align-items-center ember-view">
-                        <h2 class="reader-author-info__text reader-author-info__name t-16 t-bold reader-author-info__meta-author-detail--has-hover mr2">&#8195;Jallal Elhazzat</h2></a></div>
-                    <div id="ember62" class="artdeco-entity-lockup__subtitle ember-view">
-                    <div id="ember63" class="t-black--light ember-view">
-                    <span class="lt-line-clamp__line lt-line-clamp__line--last">&#8195;Software Engineer | Scholar and technology enthusiast </span>
-                    </span>
+                        <div id="ember53"
+                             class="artdeco-entity-lockup__image artdeco-entity-lockup__image--type-circle ember-view"
+                             type="circle">
+                            <a data-control-name="read_profile" href="" id="ember54"
+                               class="reader-author-info__meta-image ember-view">
+                                <div id="ember55" class="ml2 feed-shared-avatar-image b0 member ember-view">
+                                    <div id="ember56" class="presence-entity presence-entity--size-4 ember-view">
+                                        <img title="Tom Goldenberg" src="images/rick.jpeg" loading="lazy"
+                                             alt="Tom Goldenberg" id="ember57"
+                                             class="avatar member EntityPhoto-circle-4 presence-entity__image EntityPhoto-circle-4 lazy-image ember-view">
+                                        <div id="ember58"
+                                             class=" presence-entity__indicator presence-entity__indicator--size-4 presence-indicator hidden presence-indicator--size-4 ember-view">
+                                            <span class="visually-hidden"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div id="ember59" class="reader-author-info__content artdeco-entity-lockup__content ember-view">
+                            <div id="ember60"
+                                 class="reader-author-info__author-lockup--flex artdeco-entity-lockup__title ember-view">
+                                <a data-control-name="read_profile" href="" id="ember61"
+                                   class="reader-author-info__meta-name display-flex align-items-center ember-view">
+                                    <h2 class="reader-author-info__text reader-author-info__name t-16 t-bold reader-author-info__meta-author-detail--has-hover mr2">
+                                        &#8195;Jallal Elhazzat</h2></a></div>
+                            <div id="ember62" class="artdeco-entity-lockup__subtitle ember-view">
+                                <div id="ember63" class="t-black--light ember-view">
+                                    <span class="lt-line-clamp__line lt-line-clamp__line--last">&#8195;Software Engineer | Scholar and technology enthusiast </span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                </div>
-                </div>
                     <div class="reader-author-info__interactive-items">
-                        <a data-control-name="read_activity" href="/in/tom-goldenberg/detail/recent-activity/posts/" id="ember91" class="reader-author-info__total-articles link-without-visited-state ember-view">39 articles</a>
-                        <button data-control-name="actor_follow_toggle" aria-pressed="false" aria-label="Follow" id="ember64" class="follow reader-author-info__follow-button artdeco-button artdeco-button--secondary ml2 ember-view">
-                        <li-icon aria-hidden="true" type="plus-icon" class="artdeco-button__icon" size="small">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16" fill="currentColor" width="16" height="16" focusable="false">
-                        <path d="M14 9H9v5H7V9H2V7h5V2h2v5h5v2z"></path>
-                    </svg></li-icon>
-                        <span aria-hidden="true">Follow</span>
-                    </button>
+                        <a data-control-name="read_activity" href="" id="ember91"
+                           class="reader-author-info__total-articles link-without-visited-state ember-view">39
+                            articles</a>
+                        <button data-control-name="actor_follow_toggle" aria-pressed="false" aria-label="Follow"
+                                id="ember64"
+                                class="follow reader-author-info__follow-button artdeco-button artdeco-button--secondary ml2 ember-view">
+                            <li-icon aria-hidden="true" type="plus-icon" class="artdeco-button__icon" size="small">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16"
+                                     fill="currentColor" width="16" height="16" focusable="false">
+                                    <path d="M14 9H9v5H7V9H2V7h5V2h2v5h5v2z"></path>
+                                </svg>
+                            </li-icon>
+                            <span aria-hidden="true">Follow</span>
+                        </button>
                     </div>
                 </div>
                 <div id="ember65" class="reader-author-info__cta ml2 ember-view"></div>
             </div>
         </div>
         <!-- Author information end -->
-<!-- start of paragraph section -->
-        <br>&#8195;</br>
+        <!-- start of paragraph section -->
+        <p>&#8195;</p>
         <h2><strong>Problem statement</strong></h2>
-        <br>&#8201;</br>
+        <p>&#8201;</p>
         <p>
-           Given two sorted arrays X and Y of size m and n each. Merge elemnets of X and with the elements of Y by maintaining the sorted order. the conversion should be done in place and whithout using any other data structuress.
-        for example, input : X = {1,4,7,8,10} and Y = {2,3,9} will show this output X = {1,2,3,4,7} and Y = {8,9,10}
+            Given two sorted arrays X and Y of size m and n each. Merge elemnets of X and with the elements of Y by
+            maintaining the sorted order. the conversion should be done in place and whithout using any other data
+            structuress.
+            for example, input : X = {1,4,7,8,10} and Y = {2,3,9} will show this output X = {1,2,3,4,7} and Y = {8,9,10}
         </p>
-            <br>&#8195;</br>
+        <p>&#8195;</p>
         <h2><strong>Solution</strong></h2>
-        <br>&#8201;</br>
+        <p>&#8201;</p>
         <p>
-            The idea is very simple. We consider each element of array X and ignore element if it's already correct else we swap
-            it with the smallest element which happens to be first element of Y. After swaoing we move the element to it correct position
-            in Y to maintain the sorted order. The merge process is almost similar to merge routine of merge sort algorithem.
+            The idea is very simple. We consider each element of array X and ignore element if it's already correct else
+            we swap
+            it with the smallest element which happens to be first element of Y. After swaoing we move the element to it
+            correct position
+            in Y to maintain the sorted order. The merge process is almost similar to merge routine of merge sort
+            algorithem.
             the only difference is that we are using auxiliary array for merging.
         </p>
         <!--Start oc code section -->
-        <br>&#8195;</br>
-        <div class="code_section">
-  import java.util.Arrays;
-  public class Merge {
-	public static void merge(int[] X, int[] Y){
-		int m = X.length;
-		int n = Y.length;
-		for (int i = 0; i < m; i++){
-			if (X[i] > Y[0]){
-				int temp = X[i];
-				X[i] = Y[0];
-				Y[0] = temp;
-				int first = Y[0];
-				int k;
-				for (k = 1; k < n && Y[k] < first; k++) {
-					Y[k - 1] = Y[k];
-				}
-				Y[k - 1] = first;
-			}
-		}
-	}
-	// main function
-}
-        </div>
-        <br>&#8195;</br>
-        <!--End oc code section -->
-        <p>This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.</p>
-        <!--Start oc code section -->
-        <br>&#8195;</br>
-        <div class="code_section"  spellcheck="false">
-	// main function
-	public static void main (String[] args){
+        <p>&#8195;</p>
+        <div class="code_section" spellcheck="false">
+            import java.util.Arrays;
+            public static void merge(int[] X, int[] Y){
 
-		int[] X = { 1, 4, 7, 8, 10 };
-		int[] Y = { 2, 3, 9 };
-		merge(X, Y);
-		System.out.println("X: " + Arrays.toString(X));
-		System.out.println("Y: " + Arrays.toString(Y));
-	}
+            int m = X.length;
+            int n = Y.length;
+            for (int i = 0; i < m; i++){
+                if (X[i] > Y[0]){
+                    int temp = X[i];
+                    X[i] = Y[0];
+                    Y[0] = temp;
+                    int first = Y[0];
+                    int k;
+            for (k = 1; k < n && Y[k] < first; k++) {
+                Y[k - 1] = Y[k];
+            }
+                Y[k - 1] = first;
+            } } }
         </div>
-        <br>&#8195;</br>
+        <p>&#8201;</p>
         <!--End oc code section -->
+        <p>Below is the testing function that will test the above code:</p>
+        <!--Start oc code section -->
+        <p>&#8201;</p>
+        <div class="code_section" spellcheck="false">
+            public static void main (String[] args){
+
+            int[] X = { 1, 4, 7, 8, 10 };
+            int[] Y = { 2, 3, 9 };
+            merge(X, Y);
+            System.out.println("X: " + Arrays.toString(X));
+            System.out.println("Y: " + Arrays.toString(Y));
+            }
+        </div>
+        <p>&#8201;</p>
+        <!--End oc code section -->
+        <!--start of the out put data-->
+        <h2><strong>Program output</strong></h2>
+        <p>&#8201;</p>
+        <div class="code_section" spellcheck="false">
+        <p> X = 1 2 3 4 7 and  Y = 8 9 10</p>
+        </div>
+        <p>&#8201;</p>
+        <h2><strong>Code analysis</strong></h2>
+        <p>&#8201;</p>
+        <p> The time complexity of the solution is O(mn) and ausilliary space used by the program is O(1). The problem
+            can in fact be solved in linear time and constant space. </p>
     </div>
 </main>
+<p>&#8201;</p>
+<p>&#8201;</p>
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
 <script>window.jQuery || document.write('<script src="/js/jquery-slim.min.js"><\/script>')</script>
 </body>
 </html>
