@@ -102,8 +102,10 @@
                 if (data.length > 0) {
                     for (var count = 0; count < data.length; count++) {
                         console.log("^^^^^^^^^^^^^^^^^^IM IN BABAY^^^^^^^^^^^^");
+                        console.log("^^^^^^^^^^^^^^^^^^IM IN article_Id^^^^^^^^^^^^"+data[count].article_Info);
+
                         html +="<div class=\"jumbotron\">";
-                        html +="<a class=\"navbar-brand\" href=\"\"> <h1>"+data[count].title+"</h1></a>";
+                        html +='<a class=\"navbar-brand\" href=\"articles/'+data[count].article_Info+'"><h1>'+data[count].title+'</h1></a>';
                         html +="<p class=\"lead\">"+data[count].desc+"</p></div>";
                     }} else {
                     html = '<div class=\"jumbotron\"> Data not found <div/>';

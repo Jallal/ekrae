@@ -7,6 +7,16 @@ public class SearchCriteria {
     private String level;
     private String desc;
     private String publish_time;
+    private String article_Info;
+
+
+    public String getArticleInfo() {
+        return article_Info;
+    }
+
+    public void setArticleInfo(String articleInfo) {
+        this.article_Info = articleInfo;
+    }
 
     public int getId() {
         return id;

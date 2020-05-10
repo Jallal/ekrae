@@ -21,6 +21,17 @@ public class TopicsEntity {
     private String desc;
     private String publish_time;
 
+    public String getArticle_Info() {
+        return article_Info;
+    }
+
+    public void setArticle_Info(String article_Info) {
+        this.article_Info = article_Info;
+    }
+
+    private String article_Info;
+
+
     public int getId() {
         return id;
     }
@@ -68,7 +79,5 @@ public class TopicsEntity {
     public void setPublishDate(String publishDate) {
         this.publish_time = publishDate;
     }
-
-
 
 }

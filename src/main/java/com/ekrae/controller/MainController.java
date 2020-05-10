@@ -6,6 +6,7 @@ import com.ekrae.model.SearchCriteria;
 import com.ekrae.model.Topic;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,34 +30,13 @@ public class MainController {
 		return "welcome";
 		
 	}
-	@RequestMapping("/article")
-	public String getArticle(){
-		return "interviews/article";
-
+	@RequestMapping("/articles/{title}")
+	public String getArticle(@PathVariable("title") String title){
+		System.out.println("******HELLOOOOO"+title);
+		System.out.println("******HELLOOOOO"+new StringBuilder().append("interviews/").append(title).toString());
+		return new StringBuilder().append("interviews/").append(title).toString();
 	}
 
-	@RequestMapping("/Interviews")
-	public String getInterviewsList(){
-		return "interviewsList";
-
-	}
-	@RequestMapping("/Java")
-	public String getJavaList(){
-		return "JavaList";
-
-	}
-
-	@RequestMapping("/Springboot")
-	public String getSpringbootList(){
-		return "springbootList";
-
-	}
-
-	@RequestMapping("/challenge")
-	public String getArticleById(){
-		return "challenge";
-
-	}
 
 	@PostMapping("/search/topics")
 	public ResponseEntity<?> getTopicsByTag(@Valid @RequestBody SearchCriteria searchCriteria) throws Exception {
@@ -70,18 +50,6 @@ public class MainController {
 				allTopics = optionalTopics.get();
 			}
 		}
-		/*Optional<UserEntity> entity = this.service.getUser(user.username);
-		AjaxResponseBody result = new AjaxResponseBody();
-		if (!entity.isPresent()) {
-			user.setRole("user");
-		} else {
-			user.setRole(entity.get().getRole());
-		}
-		result.setMsg("success");*/
 		return ResponseEntity.ok(allTopics);
 	}
-
-
-
-	
 }
