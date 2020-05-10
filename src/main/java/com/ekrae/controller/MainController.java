@@ -24,7 +24,7 @@ public class MainController {
 	public MainController(TopicsDelegate topicsDelegate){
 		this.topicsDelegate=topicsDelegate;
 	}
-
+	
 	@RequestMapping("/welcome")
 	public String index(){
 		return "welcome";
