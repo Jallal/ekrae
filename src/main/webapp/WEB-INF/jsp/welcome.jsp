@@ -1,4 +1,5 @@
-<html lang="en"><head>
+<html lang="en">
+<head>
     <script src="/js/popper.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <meta charset="utf-8">
@@ -7,7 +8,6 @@
     <meta name="author" content="">
     <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
     <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
-
     <title>Ekrae your programing home</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/navbar-fixed/">
@@ -15,10 +15,12 @@
     <!-- Bootstrap core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="navbar-top-fixed.css" rel="stylesheet">
-</head>
+    <!--have Ajx work -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
+</head>
 <body>
 <-- Start of header -->
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -36,13 +38,13 @@
                 <a class="nav-link" href=""> <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="Java"><strong>Java</strong></a>
+                <a class="nav-link Java-Topics" href=""><strong>Java</strong></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="Springboot"><strong>Springboot</strong></a>
+                <a class="nav-link Springboot-Topics" href=""><strong>Springboot</strong></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="Interviews"><strong>Interviews</strong></a>
+                <a class="nav-link Interviews-Topics" href=""><strong>Interviews</strong></a>
             </li>
         </ul>
         <form class="form-inline mt-2 mt-md-0">
@@ -52,41 +54,79 @@
     </div>
 </nav>
 <-- End of header -->
-<main role="main" class="container">
-    <div class="jumbotron">
-        <a class="navbar-brand" href="#"><h1>in Place merge Two sorted arrays</h1></a>
-        <p class="lead">This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.</p>
-    </div>
-    <div class="jumbotron">
-        <h1>Navbar example</h1>
-        <p class="lead">This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.</p>
-    </div>
-    <div class="jumbotron">
-        <h1>Navbar example</h1>
-        <p class="lead">This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.</p>
-    </div>
-    <div class="jumbotron">
-        <h1>Navbar example</h1>
-        <p class="lead">This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.</p>
-    </div>
-    <div class="jumbotron">
-        <h1>Navbar example</h1>
-        <p class="lead">This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.</p>
-    </div>
-    <div class="jumbotron">
-        <h1>Navbar example</h1>
-        <p class="lead">This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.</p>
-    </div>
-    <div class="jumbotron">
-        <h1>Navbar example</h1>
-        <p class="lead">This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.</p>
-    </div>
+<main role="main" class="container" id="result">
+
 </main>
+
+
+<!-- Start of the script page-->
+<script>
+    $(document).ready(function () {
+        $(".Java-Topics").on("click", function(evt) {
+            evt.preventDefault();
+            console.log("*****************ASTA LAVISTA BABAY*********************");
+            var search = {};
+            search["tag"]='java';
+            fire_ajax_submit(search);
+        });
+
+        $(".Springboot-Topics").on("click", function(evt) {
+            console.log("*****************ASTA LAVISTA BABAY*********************");
+            evt.preventDefault();
+            var search = {};
+            search["tag"]='springboot';
+            fire_ajax_submit(search);
+        });
+
+        $(".Interviews-Topics").on("click", function(evt) {
+            console.log("*****************ASTA LAVISTA BABAY*********************");
+            evt.preventDefault();
+            var search = {};
+            search["tag"]='interviews';
+            fire_ajax_submit(search);
+        });
+    });
+
+    function fire_ajax_submit(search) {
+        console.log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
+        jQuery.ajax({
+            type: "POST",
+            contentType: "application/json",
+            url: "/search/topics",
+            data: JSON.stringify(search),
+            dataType: 'json',
+            cache: false,
+            timeout: 600000,
+            success: function (data) {
+                var html = '';
+                if (data.length > 0) {
+                    for (var count = 0; count < data.length; count++) {
+                        console.log("^^^^^^^^^^^^^^^^^^IM IN BABAY^^^^^^^^^^^^");
+                        html +="<div class=\"jumbotron\">";
+                        html +="<a class=\"navbar-brand\" href=\"\"> <h1>"+data[count].title+"</h1></a>";
+                        html +="<p class=\"lead\">"+data[count].desc+"</p></div>";
+                    }} else {
+                    html = '<div class=\"jumbotron\"> Data not found <div/>';
+                }
+                $("#result").html(html);
+                console.log("^^^^^^^^^^^^^^^^^^I HAVE LEFT^^^^^^^^^^^^");
+            },
+            error: function (e) {
+                var json = "<h4>Ajax Response</h4><pre>"+e.responseText+"</pre>";
+                $('#result').html(json);
+                console.log("ERROR : ", e);
+            }
+        });
+    }
+
+    window.onload = function () {
+        var search = {};
+        search["tag"]="all";
+        fire_ajax_submit(search);
+    };
+</script>
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script>window.jQuery || document.write('<script src="/js/jquery-slim.min.js"><\/script>')</script>
 </body>
 </html>

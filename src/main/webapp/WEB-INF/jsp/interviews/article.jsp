@@ -52,7 +52,7 @@
 <main role="main" class="container">
     <div class="jumbotron_article">
         <!--Aticle title-->
-        <h1 class="reader-article-header__title t-40 t-black t-normal pv4"> In Place merge Two sorted arrays&nbsp;</h1>
+        <h1 class="reader-article-header__title t-40 t-black t-normal pv4">In place merge two sorted arrays&nbsp;</h1>
         <!-- Article publisher date-->
         <br>
         <ul class="reader-article-header__meta t-14 t-black--light t-normal mv4">
@@ -72,7 +72,7 @@
                                class="reader-author-info__meta-image ember-view">
                                 <div id="ember55" class="ml2 feed-shared-avatar-image b0 member ember-view">
                                     <div id="ember56" class="presence-entity presence-entity--size-4 ember-view">
-                                        <img title="Tom Goldenberg" src="images/rick.jpeg" loading="lazy"
+                                        <img title="Tom Goldenberg" src="/images/rick.jpeg" loading="lazy"
                                              alt="Tom Goldenberg" id="ember57"
                                              class="avatar member EntityPhoto-circle-4 presence-entity__image EntityPhoto-circle-4 lazy-image ember-view">
                                         <div id="ember58"

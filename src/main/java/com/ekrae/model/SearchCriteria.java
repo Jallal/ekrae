@@ -1,19 +1,6 @@
-package com.ekrae.entity;
+package com.ekrae.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
-
-
-@Entity(name = "topic")
-public class TopicsEntity {
-    @NotNull
-    @Column(unique = true)
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class SearchCriteria {
     private int id;
     private String tag;
     private String title;
@@ -68,7 +55,5 @@ public class TopicsEntity {
     public void setPublishDate(String publishDate) {
         this.publish_time = publishDate;
     }
-
-
 
 }
