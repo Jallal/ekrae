@@ -66,7 +66,7 @@
             evt.preventDefault();
             console.log("*****************ASTA LAVISTA BABAY*********************");
             var search = {};
-            search["tag"]='java';
+            search["tag"]='Java';
             fire_ajax_submit(search);
         });
 
@@ -74,7 +74,7 @@
             console.log("*****************ASTA LAVISTA BABAY*********************");
             evt.preventDefault();
             var search = {};
-            search["tag"]='springboot';
+            search["tag"]='Springboot';
             fire_ajax_submit(search);
         });
 
@@ -82,7 +82,7 @@
             console.log("*****************ASTA LAVISTA BABAY*********************");
             evt.preventDefault();
             var search = {};
-            search["tag"]='interviews';
+            search["tag"]='Interviews Questions';
             fire_ajax_submit(search);
         });
     });
@@ -101,17 +101,17 @@
                 var html = '';
                 if (data.length > 0) {
                     for (var count = 0; count < data.length; count++) {
-                        console.log("^^^^^^^^^^^^^^^^^^IM IN BABAY^^^^^^^^^^^^");
-                        console.log("^^^^^^^^^^^^^^^^^^IM IN article_Id^^^^^^^^^^^^"+data[count].article_Info);
-
                         html +="<div class=\"jumbotron\">";
                         html +='<a class=\"navbar-brand\" href=\"articles/'+data[count].article_Info+'"><h1>'+data[count].title+'</h1></a>';
-                        html +="<p class=\"lead\">"+data[count].desc+"</p></div>";
+                        html +='<p>&#8195;</p>';
+                        html +="<p class=\"lead\">"+data[count].desc+"</p>";
+                        html +="<div class=\"col-md-12 text-center\">";
+                        html +="<span class=\"float-md-right text-success\">"+data[count].tag+"</span>";
+                        html +="</div></div>";
                     }} else {
                     html = '<div class=\"jumbotron\"> Data not found <div/>';
                 }
                 $("#result").html(html);
-                console.log("^^^^^^^^^^^^^^^^^^I HAVE LEFT^^^^^^^^^^^^");
             },
             error: function (e) {
                 var json = "<h4>Ajax Response</h4><pre>"+e.responseText+"</pre>";

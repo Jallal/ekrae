@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
-    <script src="/js/popper.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -10,7 +10,7 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/navbar-fixed/">
 
     <!-- Bootstrap core CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -72,7 +72,7 @@
                                class="reader-author-info__meta-image ember-view">
                                 <div id="ember55" class="ml2 feed-shared-avatar-image b0 member ember-view">
                                     <div id="ember56" class="presence-entity presence-entity--size-4 ember-view">
-                                        <img title="Tom Goldenberg" src="/images/rick.jpeg" loading="lazy"
+                                        <img title="Tom Goldenberg" src="/static/images/rick.jpeg" loading="lazy"
                                              alt="Tom Goldenberg" id="ember57"
                                              class="avatar member EntityPhoto-circle-4 presence-entity__image EntityPhoto-circle-4 lazy-image ember-view">
                                         <div id="ember58"
@@ -83,16 +83,16 @@
                                 </div>
                             </a>
                         </div>
-                        &#8195;
                         <div id="ember59" class="reader-author-info__content artdeco-entity-lockup__content ember-view">
                             <div id="ember60"
                                  class="reader-author-info__author-lockup--flex artdeco-entity-lockup__title ember-view">
-                                <a data-control-name="read_profile" href="" id="ember61" class="reader-author-info__meta-name display-flex align-items-center ember-view">
+                                <a data-control-name="read_profile" href="" id="ember61"
+                                   class="reader-author-info__meta-name display-flex align-items-center ember-view">
                                     <h2 class="reader-author-info__text reader-author-info__name t-16 t-bold reader-author-info__meta-author-detail--has-hover mr2">
-                                        Jallal Elhazzat</h2></a></div>
+                                        &#8195;Jallal Elhazzat</h2></a></div>
                             <div id="ember62" class="artdeco-entity-lockup__subtitle ember-view">
                                 <div id="ember63" class="t-black--light ember-view">
-                                    <span class="lt-line-clamp__line lt-line-clamp__line--last">Software Engineer | Scholar and technology enthusiast </span>
+                                    <span class="lt-line-clamp__line lt-line-clamp__line--last">&#8195;Software Engineer | Scholar and technology enthusiast </span>
                                     </span>
                                 </div>
                             </div>
@@ -150,16 +150,16 @@
             int m = X.length;
             int n = Y.length;
             for (int i = 0; i < m; i++){
-                if (X[i] > Y[0]){
-                    int temp = X[i];
-                    X[i] = Y[0];
-                    Y[0] = temp;
-                    int first = Y[0];
-                    int k;
+            if (X[i] > Y[0]){
+            int temp = X[i];
+            X[i] = Y[0];
+            Y[0] = temp;
+            int first = Y[0];
+            int k;
             for (k = 1; k < n && Y[k] < first; k++) {
-                Y[k - 1] = Y[k];
+            Y[k - 1] = Y[k];
             }
-                Y[k - 1] = first;
+            Y[k - 1] = first;
             } } }
         </div>
         <p>&#8201;</p>
@@ -183,7 +183,7 @@
         <h2><strong>Program output</strong></h2>
         <p>&#8201;</p>
         <div class="code_section" spellcheck="false">
-        <p> X = 1 2 3 4 7 and  Y = 8 9 10</p>
+            <p> X = 1 2 3 4 7 and  Y = 8 9 10</p>
         </div>
         <p>&#8201;</p>
         <h2><strong>Code analysis</strong></h2>
