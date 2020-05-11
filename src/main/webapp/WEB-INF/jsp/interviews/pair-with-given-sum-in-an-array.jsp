@@ -6,12 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>In Place merge Two sorted arrays</title>
+    <title>Find pair with given sum in an array</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/navbar-fixed/">
 
     <!-- Bootstrap core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
-
     <!--have Ajx work -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -57,12 +56,12 @@
 <main role="main" class="container">
     <div class="jumbotron_article">
         <!--Aticle title-->
-        <h1 class="reader-article-header__title t-40 t-black t-normal pv4">In place merge two sorted arrays&nbsp;</h1>
+        <h1 class="reader-article-header__title t-40 t-black t-normal pv4">Find pair with given sum in an array</h1>
         <!-- Article publisher date-->
         <br>
         <ul class="reader-article-header__meta t-14 t-black--light t-normal mv4">
             <li>
-                <time class="reader-article-header__publish-date">Published on May 8, 2020</time>
+                <time class="reader-article-header__publish-date">Published on May 10, 2020</time>
             </li>
         </ul>
         <!-- Author information -->
@@ -115,43 +114,43 @@
         <h2><strong>Problem statement</strong></h2>
         <p>&#8201;</p>
         <p>
-            Given two sorted arrays X and Y of size m and n each. Merge elemnets of X and with the elements of Y by
-            maintaining the sorted order. the conversion should be done in place and whithout using any other data
-            structuress.
-            for example, input : X = {1,4,7,8,10} and Y = {2,3,9} will show this output X = {1,2,3,4,7} and Y = {8,9,10}
+            In this example, let assume you will have two unsorted arrays of integers. Find a pair with a given sum.
         </p>
         <p>&#8195;</p>
         <h2><strong>Solution</strong></h2>
         <p>&#8201;</p>
         <p>
-            The idea is very simple. We consider each element of array X and ignore element if it's already correct else
-            we swap
-            it with the smallest element which happens to be first element of Y. After swaoing we move the element to it
-            correct position
-            in Y to maintain the sorted order. The merge process is almost similar to merge routine of merge sort
-            algorithem.
-            the only difference is that we are using auxiliary array for merging.
+            You can use a map to solve the above problem in linear time. We use the map to insert each element of the array . We also check if the difference between the element in i and the sum-i in the map already exist. If the difference exist we print and exit.
         </p>
         <!--Start oc code section -->
         <p>&#8195;</p>
         <div class="code_section" spellcheck="false">
-            import java.util.Arrays;
-            public static void merge(int[] X, int[] Y){
+            // Naive method to find a pair in an array with given sum
+            public static void findPair(int[] A, int sum)
+            {
+            // create an empty Hash Map
+            Map<Integer, Integer> map = new HashMap<>();
 
-            int m = X.length;
-            int n = Y.length;
-            for (int i = 0; i < m; i++){
-                if (X[i] > Y[0]){
-                    int temp = X[i];
-                    X[i] = Y[0];
-                    Y[0] = temp;
-                    int first = Y[0];
-                    int k;
-            for (k = 1; k < n && Y[k] < first; k++) {
-                Y[k - 1] = Y[k];
+            // do for each element
+            for (int i = 0; i < A.length; i++)
+            {
+            // check if pair (arr[i], sum-arr[i]) exists
+
+            // if difference is seen before, print the pair
+            if (map.containsKey(sum - A[i]))
+            {
+            System.out.println("Pair found at index " +
+            map.get(sum - A[i]) + " and " + i);
+            return;
             }
-                Y[k - 1] = first;
-            } } }
+
+            // store index of current element in the map
+            map.put(A[i], i);
+            }
+
+            // No pair with given sum exists in the array
+            System.out.println("Pair not found");
+            }
         </div>
         <p>&#8201;</p>
         <!--End oc code section -->
@@ -159,13 +158,11 @@
         <!--Start oc code section -->
         <p>&#8201;</p>
         <div class="code_section" spellcheck="false">
-            public static void main (String[] args){
+            public static void main (String[] args) {
 
-            int[] X = { 1, 4, 7, 8, 10 };
-            int[] Y = { 2, 3, 9 };
-            merge(X, Y);
-            System.out.println("X: " + Arrays.toString(X));
-            System.out.println("Y: " + Arrays.toString(Y));
+            int[] A = { 8, 7, 2, 5, 3, 1 };
+            int sum = 10;
+            findPair(A, sum);
             }
         </div>
         <p>&#8201;</p>
@@ -174,13 +171,12 @@
         <h2><strong>Program output</strong></h2>
         <p>&#8201;</p>
         <div class="code_section" spellcheck="false">
-        <p> X = 1 2 3 4 7 and  Y = 8 9 10</p>
+            <p> Pair found at index 0 and 2</p>
         </div>
         <p>&#8201;</p>
         <h2><strong>Code analysis</strong></h2>
         <p>&#8201;</p>
-        <p> The time complexity of the solution is O(mn) and ausilliary space used by the program is O(1). The problem
-            can in fact be solved in linear time and constant space. </p>
+        <p> The time complexity for this olution is O(n) and auxiliary space used by the program is O(n)</p>
     </div>
 </main>
 <p>&#8201;</p>

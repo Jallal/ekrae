@@ -2,8 +2,8 @@ package com.ekrae.controller;
 
 import com.ekrae.delegate.TopicsDelegate;
 import com.ekrae.entity.TopicsEntity;
+import com.ekrae.model.PostUpdate;
 import com.ekrae.model.SearchCriteria;
-import com.ekrae.model.Topic;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,38 +18,48 @@ import java.util.Optional;
 
 @Controller
 public class MainController {
-	private TopicsDelegate topicsDelegate;
+    private TopicsDelegate topicsDelegate;
 
 
-	public MainController(TopicsDelegate topicsDelegate){
-		this.topicsDelegate=topicsDelegate;
-	}
-	
-	@RequestMapping("/welcome")
-	public String index(){
-		return "welcome";
-		
-	}
-	@RequestMapping("/articles/{title}")
-	public String getArticle(@PathVariable("title") String title){
-		System.out.println("******HELLOOOOO"+title);
-		System.out.println("******HELLOOOOO"+new StringBuilder().append("interviews/").append(title).toString());
-		return new StringBuilder().append("interviews/").append(title).toString();
-	}
+    public MainController(TopicsDelegate topicsDelegate) {
+        this.topicsDelegate = topicsDelegate;
+    }
+
+    @RequestMapping("/welcome")
+    public String index() {
+
+        return new StringBuilder().append("welcome").toString();
+    }
+
+    @RequestMapping("/articles/{title}")
+    public String getArticle(@PathVariable("title") String title) {
+
+        return new StringBuilder().append("interviews/").append(title).toString();
+    }
 
 
-	@PostMapping("/search/topics")
-	public ResponseEntity<?> getTopicsByTag(@Valid @RequestBody SearchCriteria searchCriteria) throws Exception {
-		System.out.println("***************************** "+searchCriteria.getTag());
-		List<TopicsEntity> allTopics = new ArrayList<>();
-		if(searchCriteria.getTag().equalsIgnoreCase("all")){
-			 allTopics = this.topicsDelegate.getAllTopics();
-		}else {
-			Optional<List<TopicsEntity>> optionalTopics = this.topicsDelegate.getTopicByTag(searchCriteria.getTag());
-			if (optionalTopics.isPresent()) {
-				allTopics = optionalTopics.get();
-			}
-		}
-		return ResponseEntity.ok(allTopics);
-	}
+    @PostMapping("/update/article")
+    public ResponseEntity<?> updateArticle(@Valid @RequestBody PostUpdate postUpdate) {
+
+        List<TopicsEntity> allTopics = this.topicsDelegate.getAllTopics();
+        postUpdate.setPublicationsCount(allTopics.size());
+        return ResponseEntity.ok(postUpdate);
+    }
+
+
+    @PostMapping("/search/topics")
+    public ResponseEntity<?> getTopicsByTag(@Valid @RequestBody SearchCriteria searchCriteria) {
+
+        List<TopicsEntity> allTopics = new ArrayList<>();
+        if (searchCriteria.getTag().equalsIgnoreCase("all")) {
+            allTopics = this.topicsDelegate.getAllTopics();
+        } else {
+            Optional<List<TopicsEntity>> optionalTopics = this.topicsDelegate.getTopicByTag(searchCriteria.getTag());
+            if (optionalTopics.isPresent()) {
+                allTopics = optionalTopics.get();
+            }
+        }
+        allTopics.sort((e1, e2) -> e2.getPublishDate().compareTo(e1.getPublishDate()));
+        return ResponseEntity.ok(allTopics);
+    }
 }

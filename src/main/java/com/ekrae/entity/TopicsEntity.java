@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
+import java.time.Instant;
+import java.util.Date;
 
 
 @Entity(name = "topic")
@@ -19,7 +21,7 @@ public class TopicsEntity {
     private String title;
     private String level;
     private String desc;
-    private String publish_time;
+    private Instant publish_time;
 
     public String getArticle_Info() {
         return article_Info;
@@ -72,11 +74,11 @@ public class TopicsEntity {
         this.desc = desc;
     }
 
-    public String getPublishDate() {
+    public Instant getPublishDate() {
         return publish_time;
     }
 
-    public void setPublishDate(String publishDate) {
+    public void setPublishDate(Instant publishDate) {
         this.publish_time = publishDate;
     }
 

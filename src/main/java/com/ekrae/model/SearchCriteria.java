@@ -1,12 +1,14 @@
 package com.ekrae.model;
 
+import java.time.Instant;
+
 public class SearchCriteria {
     private int id;
     private String tag;
     private String title;
     private String level;
     private String desc;
-    private String publish_time;
+    private Instant publish_time;
     private String article_Info;
 
 
@@ -58,11 +60,11 @@ public class SearchCriteria {
         this.desc = desc;
     }
 
-    public String getPublishDate() {
+    public Instant getPublishDate() {
         return publish_time;
     }
 
-    public void setPublishDate(String publishDate) {
+    public void setPublishDate(Instant publishDate) {
         this.publish_time = publishDate;
     }
 

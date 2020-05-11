@@ -88,7 +88,6 @@
     });
 
     function fire_ajax_submit(search) {
-        console.log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
         jQuery.ajax({
             type: "POST",
             contentType: "application/json",
