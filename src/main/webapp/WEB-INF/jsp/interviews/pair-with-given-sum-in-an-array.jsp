@@ -46,8 +46,8 @@
             </li>
         </ul>
         <form class="form-inline mt-2 mt-md-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
+            <input class="form-control mr-sm-2" type="text" id="tags" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-warning my-2 my-sm-0" id="search" type="submit">Search</button>
         </form>
     </div>
 </nav>
@@ -184,6 +184,16 @@
 </body>
 
 <script>
+    $(document).ready(function () {
+        $('#search').click(function (evt) {
+            //var query = $('#tags').val();
+            evt.preventDefault();
+            var search = {};
+            search["search"] = $('#tags').val();
+            searchByKeyWords(search);
+        });
+    });
+
     function fire_ajax_submit(search) {
         jQuery.ajax({
             type: "POST",
@@ -209,12 +219,15 @@
             }
         });
     }
+    function searchByKeyWords(search) {
 
-    window.onload = function () {
-        var search = {};
-        search["author"]="author";
-        fire_ajax_submit(search);
-    };
+        jQuery.ajax({
+            success:function(data){
+                top.location.href = '/welcome/'+search.search;
+            }
+        });
+        return false;
+    }
 </script>
 
 </html>

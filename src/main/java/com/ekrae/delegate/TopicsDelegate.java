@@ -34,4 +34,9 @@ public class TopicsDelegate {
         return topics;
     }
 
+    public Optional<List<TopicsEntity>> getTopicsFromSearch(String desc) {
+
+        return this.topicsRepo.findWithCustom(desc);
+    }
+
 }

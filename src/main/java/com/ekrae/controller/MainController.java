@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
 import java.util.ArrayList;
@@ -19,6 +20,7 @@ import java.util.Optional;
 @Controller
 public class MainController {
     private TopicsDelegate topicsDelegate;
+    private String searchString = null;
 
 
     public MainController(TopicsDelegate topicsDelegate) {
@@ -51,7 +53,12 @@ public class MainController {
     public ResponseEntity<?> getTopicsByTag(@Valid @RequestBody SearchCriteria searchCriteria) {
 
         List<TopicsEntity> allTopics = new ArrayList<>();
-        if (searchCriteria.getTag().equalsIgnoreCase("all")) {
+        if(null!=searchString){
+            Optional<List<TopicsEntity>> allTopicsFromSearch = this.topicsDelegate.getTopicsFromSearch(searchString);
+            if (allTopicsFromSearch.isPresent()) {
+                allTopics = allTopicsFromSearch.get();
+            }
+        } else if (null!=searchCriteria.getTag()&&searchCriteria.getTag().equalsIgnoreCase("all")) {
             allTopics = this.topicsDelegate.getAllTopics();
         } else {
             Optional<List<TopicsEntity>> optionalTopics = this.topicsDelegate.getTopicByTag(searchCriteria.getTag());
@@ -59,7 +66,33 @@ public class MainController {
                 allTopics = optionalTopics.get();
             }
         }
+        this.searchString=null;
         allTopics.sort((e1, e2) -> e2.getPublishDate().compareTo(e1.getPublishDate()));
         return ResponseEntity.ok(allTopics);
     }
+
+
+    @PostMapping("/search/articles")
+    public ResponseEntity<?> getTopicsBykeyword(@Valid @RequestBody SearchCriteria searchCriteria) {
+        this.searchString=null;
+        List<TopicsEntity> allTopics = new ArrayList<>();
+        if (null != searchCriteria.getSearch()) {
+            Optional<List<TopicsEntity>> allTopicsFromSearch = this.topicsDelegate.getTopicsFromSearch(searchCriteria.getSearch());
+            if (allTopicsFromSearch.isPresent()) {
+                allTopics = allTopicsFromSearch.get();
+            }
+        }
+        allTopics.sort((e1, e2) -> e2.getPublishDate().compareTo(e1.getPublishDate()));
+        return ResponseEntity.ok(allTopics);
+    }
+
+
+
+    @RequestMapping("/welcome/{searchString}")
+    public ModelAndView getTopicsBykeywordFromArticles(@PathVariable("searchString") String searchString) {
+
+        this.searchString=searchString;
+        return new ModelAndView("redirect:/welcome");
+    }
+
 }

@@ -10,6 +10,16 @@ public class SearchCriteria {
     private String desc;
     private Instant publish_time;
     private String article_Info;
+    private String search;
+
+
+    public String getSearch() {
+        return search;
+    }
+
+    public void setSearch(String search) {
+        this.search = search;
+    }
 
 
     public String getArticleInfo() {

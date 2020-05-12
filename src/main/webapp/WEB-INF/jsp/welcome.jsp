@@ -48,8 +48,8 @@
             </li>
         </ul>
         <form class="form-inline mt-2 mt-md-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
+            <input class="form-control mr-sm-2" type="text" id="tags" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-warning my-2 my-sm-0" id="search" type="submit">Search</button>
         </form>
     </div>
 </nav>
@@ -84,6 +84,14 @@
             var search = {};
             search["tag"]='Interviews Questions';
             fire_ajax_submit(search);
+        });
+
+        $('#search').click(function (evt) {
+            //var query = $('#tags').val();
+            evt.preventDefault();
+            var search = {};
+            search["search"] = $('#tags').val();
+            searchByKeyWords(search);
         });
     });
 
@@ -120,6 +128,41 @@
         });
     }
 
+    function searchByKeyWords(search) {
+        jQuery.ajax({
+            type: "POST",
+            contentType: "application/json",
+            url: "/search/articles",
+            data: JSON.stringify(search),
+            dataType: 'json',
+            cache: false,
+            timeout: 600000,
+            success: function (data) {
+                var html = '';
+                if (data.length > 0) {
+                    for (var count = 0; count < data.length; count++) {
+                        html +="<div class=\"jumbotron\">";
+                        html +='<a class=\"navbar-brand\" href=\"articles/'+data[count].article_Info+'"><h1>'+data[count].title+'</h1></a>';
+                        html +='<p>&#8195;</p>';
+                        html +="<p class=\"lead\">"+data[count].desc+"</p>";
+                        html +="<div class=\"col-md-12 text-center\">";
+                        html +="<span class=\"float-md-right text-success\">"+data[count].tag+"</span>";
+                        html +="</div></div>";
+                    }} else {
+                    html = '<div class=\"jumbotron\"> Data not found <div/>';
+                }
+                $("#result").html(html);
+            },
+            error: function (e) {
+                var json = "<h4>Ajax Response</h4><pre>"+e.responseText+"</pre>";
+                $('#result').html(json);
+                console.log("ERROR : ", e);
+            }
+        });
+    }
+</script>
+
+<script>
     window.onload = function () {
         var search = {};
         search["tag"]="all";
