@@ -24,8 +24,7 @@
     <br>&#8195;</br>
     <br>&#8195;</br>
     <a class="navbar-brand" href="/welcome"><h1><strong>Home</strong></h1></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <br>&#8195;</br>
@@ -33,16 +32,16 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="#"> <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href=""> <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><strong>Java</strong></a>
+                <a class="nav-link Java-Topics" href=""><strong>Java</strong></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><strong>Springboot</strong></a>
+                <a class="nav-link Springboot-Topics" href=""><strong>Springboot</strong></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><strong>Interviews</strong></a>
+                <a class="nav-link Interviews-Topics" href=""><strong>Interviews</strong></a>
             </li>
         </ul>
         <form class="form-inline mt-2 mt-md-0">
@@ -184,6 +183,40 @@
 </body>
 
 <script>
+
+    $(document).ready(function () {
+        $(".Java-Topics").on("click", function(evt) {
+            evt.preventDefault();
+            console.log("*****************ASTA LAVISTA BABAY*********************");
+            var search = {};
+            search["tag"]='java';
+            fire_ajax_submit(search);
+        });
+
+        $(".Springboot-Topics").on("click", function(evt) {
+            console.log("*****************ASTA LAVISTA BABAY*********************");
+            evt.preventDefault();
+            var search = {};
+            search["tag"]='springboot';
+            fire_ajax_submit(search);
+        });
+
+        $(".Interviews-Topics").on("click", function(evt) {
+            console.log("*****************ASTA LAVISTA BABAY*********************");
+            evt.preventDefault();
+            var search = {};
+            search["tag"]='interviews';
+            fire_ajax_submit(search);
+        });
+
+        $('#search').click(function (evt) {
+            //var query = $('#tags').val();
+            evt.preventDefault();
+            var search = {};
+            search["search"] = $('#tags').val();
+            searchByKeyWords(search);
+        });
+    });
     $(document).ready(function () {
         $('#search').click(function (evt) {
             //var query = $('#tags').val();

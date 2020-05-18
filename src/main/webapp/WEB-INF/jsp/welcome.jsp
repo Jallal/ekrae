@@ -66,7 +66,7 @@
             evt.preventDefault();
             console.log("*****************ASTA LAVISTA BABAY*********************");
             var search = {};
-            search["tag"]='Java';
+            search["tag"]='java';
             fire_ajax_submit(search);
         });
 
@@ -74,7 +74,7 @@
             console.log("*****************ASTA LAVISTA BABAY*********************");
             evt.preventDefault();
             var search = {};
-            search["tag"]='Springboot';
+            search["tag"]='springboot';
             fire_ajax_submit(search);
         });
 
@@ -82,7 +82,7 @@
             console.log("*****************ASTA LAVISTA BABAY*********************");
             evt.preventDefault();
             var search = {};
-            search["tag"]='Interviews Questions';
+            search["tag"]='interviews';
             fire_ajax_submit(search);
         });
 
@@ -109,7 +109,7 @@
                 if (data.length > 0) {
                     for (var count = 0; count < data.length; count++) {
                         html +="<div class=\"jumbotron\">";
-                        html +='<a class=\"navbar-brand\" href=\"articles/'+data[count].article_Info+'"><h1>'+data[count].title+'</h1></a>';
+                        html +='<a class=\"navbar-brand\" href=\"'+data[count].tag+'/'+data[count].article_Info+'"><h1>'+data[count].title+'</h1></a>';
                         html +='<p>&#8195;</p>';
                         html +="<p class=\"lead\">"+data[count].desc+"</p>";
                         html +="<div class=\"col-md-12 text-center\">";

@@ -1,4 +1,4 @@
-<html lang="en">
+< lang="en">
 <head>
     <script src="/js/popper.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
@@ -17,14 +17,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
-
 <body>
+<-- Start of header -->
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <br>&#8195;</br>
     <br>&#8195;</br>
     <a class="navbar-brand" href="/welcome"><h1><strong>Home</strong></h1></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
-            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <br>&#8195;</br>
@@ -32,16 +31,16 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link" href="#"> <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href=""> <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><strong>Java</strong></a>
+                <a class="nav-link Java-Topics" href=""><strong>Java</strong></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><strong>Springboot</strong></a>
+                <a class="nav-link Springboot-Topics" href=""><strong>Springboot</strong></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><strong>Interviews</strong></a>
+                <a class="nav-link Interviews-Topics" href=""><strong>Interviews</strong></a>
             </li>
         </ul>
         <form class="form-inline mt-2 mt-md-0">
@@ -55,8 +54,7 @@
 <main role="main" class="container">
     <div class="jumbotron_article">
         <!--Aticle title-->
-        <h1 class="reader-article-header__title t-40 t-black t-normal pv4">Basic Akka Actors with Java 8 and
-            Maven&nbsp;</h1>
+        <h1 class="reader-article-header__title t-40 t-black t-normal pv4">Basic Akka Actors with Java 8 and Maven&nbsp;</h1>
         <!-- Article publisher date-->
         <br>
         <ul class="reader-article-header__meta t-14 t-black--light t-normal mv4">
@@ -189,7 +187,7 @@
         </div>
         <p>&#8201;</p>
         <!--End oc code section -->
-        <p>Below is the testing function that will test the above code:</p>
+        <p>Below is the main function to the program</p>
         <!--Start oc code section -->
         <p>&#8201;</p>
         <div class="code_section" spellcheck="false">
@@ -219,10 +217,10 @@
         <p>&#8201;</p>
         <div class="code_section" spellcheck="false">
             <p>
-                [INFO] [05/17/2020 19:24:06.914]  [akka://default/user/simple-actor] Received Message: Hello
-                [INFO] [05/17/2020 19:24:06.915]  [akka://default/user/simple-actor] Running in thread: default-akka.actor.default-dispatcher-3
-                [INFO] [05/17/2020 19:24:06.915]  [akka://default/user/simple-actor] Received Message: World
-                [INFO] [05/17/2020 19:24:06.915]  [akka://default/user/simple-actor] Running in thread: default-akka.actor.default-dispatcher-3
+                <span class="text-danger">[INFO] [05/17/2020 19:24:06.914]  [akka://default/user/simple-actor]</span> Received Message: Hello
+                <span class="text-danger">[INFO] [05/17/2020 19:24:06.915]  [akka://default/user/simple-actor]</span> Running in thread: default-akka.actor.default-dispatcher-3
+                <span class="text-danger">[INFO] [05/17/2020 19:24:06.915]  [akka://default/user/simple-actor]</span> Received Message: World
+                <span class="text-danger">[INFO] [05/17/2020 19:24:06.915]  [akka://default/user/simple-actor]</span> Running in thread: default-akka.actor.default-dispatcher-3
 
                 Process finished with exit code 130 (interrupted by signal 2: SIGINT)
             </p>
@@ -242,7 +240,32 @@
 
 
 <script>
+
     $(document).ready(function () {
+        $(".Java-Topics").on("click", function(evt) {
+            evt.preventDefault();
+            console.log("*****************ASTA LAVISTA BABAY*********************");
+            var search = {};
+            search["tag"]='java';
+            searchByKeyWords(search);
+        });
+
+        $(".Springboot-Topics").on("click", function(evt) {
+            console.log("*****************ASTA LAVISTA BABAY*********************");
+            evt.preventDefault();
+            var search = {};
+            search["tag"]='springboot';
+            searchByKeyWords(search);
+        });
+
+        $(".Interviews-Topics").on("click", function(evt) {
+            console.log("*****************ASTA LAVISTA BABAY*********************");
+            evt.preventDefault();
+            var search = {};
+            search["tag"]='interviews';
+            searchByKeyWords(search);
+        });
+
         $('#search').click(function (evt) {
             //var query = $('#tags').val();
             evt.preventDefault();
@@ -252,37 +275,11 @@
         });
     });
 
-    function fire_ajax_submit(search) {
-        jQuery.ajax({
-            type: "POST",
-            contentType: "application/json",
-            url: "/update/article",
-            data: JSON.stringify(search),
-            dataType: 'json',
-            cache: false,
-            timeout: 600000,
-            success: function (data) {
-                var html = '';
-                html += "<a data-control-name=\"read_activity\" href=\"\" id=\"ember91\" class=\"reader-author-info__total-articles link-without-visited-state ember-view\">" + data.publicationsCount + " articles</a>";
-                html += "<button data-control-name=\"actor_follow_toggle\" aria-pressed=\"false\" aria-label=\"Follow\"id=\"ember64\"class=\"follow reader-author-info__follow-button artdeco-button artdeco-button--secondary ml2 ember-view\">";
-                html += "<li-icon aria-hidden=\"true\" type=\"plus-icon\" class=\"artdeco-button__icon\" size=\"small\">";
-                html += "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\" data-supported-dps=\"16x16\" fill=\"currentColor\" width=\"16\" height=\"16\" focusable=\"false\">";
-                html += "<path d=\"M14 9H9v5H7V9H2V7h5V2h2v5h5v2z\"></path> </svg> </li-icon> <span aria-hidden=\"true\">Follow</span> </button>";
-                $("#articleCount").html(html);
-            },
-            error: function (e) {
-                var json = "<h4>Ajax Response</h4><pre>" + e.responseText + "</pre>";
-                $('#articleCount').html(json);
-                console.log("ERROR : ", e);
-            }
-        });
-    }
-
     function searchByKeyWords(search) {
 
         jQuery.ajax({
-            success: function (data) {
-                top.location.href = '/welcome/' + search.search;
+            success:function(data){
+                top.location.href = '/welcome/'+search.search;
             }
         });
         return false;
