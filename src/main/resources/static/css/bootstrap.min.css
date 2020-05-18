@@ -9190,3 +9190,31 @@ abbr, address, article, aside, audio, b, blockquote, body, canvas, caption, cite
 }
 
 /*# sourceMappingURL=bootstrap.min.css.map */
+.list-style {
+    margin-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 10px;
+}
+.ul-style {
+    margin-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 40px;
+}
+
+/* MAVEN dependency style code */
+.token.property, .token.tag, .token.boolean, .token.number, .token.constant, .token.symbol, .token.deleted {
+    color: #DD4A68;
+}
+
+.java_keyword {
+    color: #DD4A68;
+}
+.java_function {
+
+    color: #07a;
+}
+.java_string{
+    color: #690;
+}

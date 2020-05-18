@@ -22,7 +22,6 @@ public class MainController {
     private TopicsDelegate topicsDelegate;
     private String searchString = null;
 
-
     public MainController(TopicsDelegate topicsDelegate) {
         this.topicsDelegate = topicsDelegate;
     }
@@ -33,10 +32,16 @@ public class MainController {
         return new StringBuilder().append("welcome").toString();
     }
 
-    @RequestMapping("/articles/{title}")
-    public String getArticle(@PathVariable("title") String title) {
+    @RequestMapping("/interviews/{title}")
+    public String getInterviewQuestions(@PathVariable("title") String title) {
 
         return new StringBuilder().append("interviews/").append(title).toString();
+    }
+
+    @RequestMapping("/java/{title}")
+    public String getJavaArticle(@PathVariable("title") String title) {
+
+        return new StringBuilder().append("java/").append(title).toString();
     }
 
 

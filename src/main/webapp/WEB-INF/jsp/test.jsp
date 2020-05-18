@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
-    <script src="/static/js/popper.min.js"></script>
-    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -10,7 +10,7 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/navbar-fixed/">
 
     <!-- Bootstrap core CSS -->
-    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -72,7 +72,7 @@
                                class="reader-author-info__meta-image ember-view">
                                 <div id="ember55" class="ml2 feed-shared-avatar-image b0 member ember-view">
                                     <div id="ember56" class="presence-entity presence-entity--size-4 ember-view">
-                                        <img title="Tom Goldenberg" src="/static/images/rick.jpeg" loading="lazy"
+                                        <img title="Tom Goldenberg" src="/images/rick.jpeg" loading="lazy"
                                              alt="Tom Goldenberg" id="ember57"
                                              class="avatar member EntityPhoto-circle-4 presence-entity__image EntityPhoto-circle-4 lazy-image ember-view">
                                         <div id="ember58"
