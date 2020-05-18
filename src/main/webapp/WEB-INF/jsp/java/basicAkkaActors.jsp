@@ -197,7 +197,7 @@
 
             <span class="java_keyword">public class</span> SimpleActorApp {
 
-                <span class="java_keyword">public static </span>void <span class="java_function"> main</span>(<span class="java_keyword">String</span>[] args) {
+                <span class="java_keyword">public static void</span> <span class="java_function"> main</span>(<span class="java_keyword">String</span>[] args) {
 
                 // Entry point
                 ActorSystem actorSystem = ActorSystem.<span class="java_function">create</span>();
@@ -226,12 +226,71 @@
             </p>
         </div>
         <p>&#8201;</p>
-        <h2><strong>Code analysis</strong></h2>
+        <h2><strong>Test Code</strong></h2>
         <p>&#8201;</p>
-        <p> The time complexity of the solution is O(mn) and ausilliary space used by the program is O(1). The problem
-            can in fact be solved in linear time and constant space.
+        <div class="code_section" spellcheck="false">
+            <span class="java_keyword">import</span> akka.actor.ActorRef;
+            <span class="java_keyword">import</span> akka.actor.ActorSystem;
+            <span class="java_keyword">import</span> akka.actor.Props;
+            <span class="java_keyword">import</span> akka.pattern.PatternsCS;
+            <span class="java_keyword">import</span> akka.testkit.JavaTestKit;
+            <span class="java_keyword">import</span> akka.testkit.TestActorRef;
+            <span class="java_keyword">import</span> org.junit.Before;
+            <span class="java_keyword">import</span> org.junit.After;
+            <span class="java_keyword">import</span> org.junit.Test;
+            <span class="java_keyword">import</span> java.util.concurrent.CompletableFuture;
+            <span class="java_keyword">import static</span> akka.testkit.JavaTestKit.duration;
+            <span class="java_keyword">import static</span> org.junit.Assert.assertEquals;
 
-        </p>
+            <span class="java_keyword">public class</span> SimpleActorTest {
+
+                ActorSystem system;
+
+                @Test
+                <span class="java_keyword">public void</span>  <span class="java_function"> testTellHello</span>() {
+
+                    Props props = Props.<span class="java_function"> create</span>(SimpleActor.class);
+                    TestActorRef<span class="token punctuation">&lt;</span>SimpleActor<span class="token punctuation">&lt></span> ref = TestActorRef.<span class="java_function"> create</span>(system, props, <span class="java_string">"test-simple-actor"</span>);
+                    // access actor methods and state
+                    SimpleActor actor = ref.<span class="java_function"> underlyingActor</span>();
+                    // actor.getGreeting();
+                    ref.<span class="java_function">tell</span>(<span class="java_string">"Hello"</span>, null);
+                }
+
+                @Test
+                <span class="java_keyword">public void</span> <span class="java_function"> testAskHello</span>() {
+
+                    Props props = Props.create(SimpleActor.class);
+                    TestActorRef<span class="token punctuation">&lt;</span>SimpleActor<span class="token punctuation">&lt></span> ref = TestActorRef.create(system, props, <span class="java_string">"test-simple-actor"</span>);
+                    CompletableFuture<span class="token punctuation">&lt;</span>Object<span class="token punctuation">&lt></span> future = PatternsCS.<span class="java_function">ask</span>(ref, <span class="java_string">"Hello"</span>, 1000).toCompletableFuture();
+                    assertEquals(<span class="java_string">"World"</span>, future.join());
+                }
+
+                @Test
+                <span class="java_keyword">public void</span> <span class="java_function"> testTellWithProbe</span>() {
+
+                    JavaTestKit probe = new JavaTestKit(system);
+                    Props props = Props.create(SimpleActor.class);
+                    ActorRef subject = system.actorOf(props);
+
+                    subject.tell(<span class="java_string">"Hello"</span>, probe.getRef());
+                    // await the correct responses
+                    probe.expectMsgEquals(duration(<span class="java_string">"1 second"</span>), <span class="java_string">"World"</span>);
+                }
+
+                @Before
+                <span class="java_keyword">public void</span><span class="java_function"> setup</span>() {
+
+                    system = ActorSystem.create();
+                }
+
+                @After
+                <span class="java_keyword">public void</span> <span class="java_function">teardown()</span> {
+
+                JavaTestKit.<span class="java_function">shutdownActorSystem</span>(system);
+                }
+            }
+        </div>
     </div>
 </main>
 <p>&#8201;</p>
