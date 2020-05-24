@@ -9212,9 +9212,12 @@ abbr, address, article, aside, audio, b, blockquote, body, canvas, caption, cite
     color: #DD4A68;
 }
 .java_function {
-
     color: #07a;
 }
 .java_string{
     color: #690;
+}
+
+.java_annotation {
+    color: #FFCB05
 }

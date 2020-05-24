@@ -110,6 +110,17 @@
         <!-- Author information end -->
         <!-- start of paragraph section -->
         <p>&#8195;</p>
+        <h2><strong>What is Akka?</strong></h2>
+        <p>&#8201;</p>
+        <p>Akka toolkit, an open source project built by Lightbend, provides a simpler, single programming model one way of coding for concurrent and distributed
+        applications the actor programming model. Actors are (fitting for our industry) nothing new at all, in and of themselves. It’s the way that actors are provided in
+        Akka to scale applications both up and out on the JVM that’s unique. As you’ll see, Akka uses resources efficiently and makes
+        it possible to keep the complexity relatively low while an application scales.
+        Akka’s primary goal is to make it simpler to build applications that are deployed in the cloud or run on devices with many
+        cores and that efficiently leverage the full capacity of the computing power available. It’s a toolkit that provides an actor programming model, runtime, and required supporting
+        tools for building scalable applications.
+        </p>
+        <p>&#8195;</p>
         <h2><strong>Akka Maven dependency</strong></h2>
         <p>&#8201;</p>
         <div class="code_section" spellcheck="false">
@@ -168,7 +179,7 @@
                 <span class="java_keyword">private</span> LoggingAdapter log = Logging.getLogger(getContext().system(), this);
                 <span class="java_keyword">private String</span> greeting = <span class="java_string">"World"</span>;
 
-                <span class="java_function">@Override</span>
+                <span class="java_annotation">@Override</span>
                 <span class="java_keyword">public void</span> <span class="java_function">onReceive</span>(Object message) <span class="java_keyword">throws Throwable</span> {
 
                 log.info(<span class="java_string">"Received Message: "</span> + message);
@@ -246,27 +257,27 @@
 
                 ActorSystem system;
 
-                @Test
-                <span class="java_keyword">public void</span>  <span class="java_function"> testTellHello</span>() {
+                <span class="java_annotation">@Test</span>
+                <span class="java_keyword">public void</span>  <span class="java_function">testTellHello</span>() {
 
                     Props props = Props.<span class="java_function"> create</span>(SimpleActor.class);
-                    TestActorRef<span class="token punctuation">&lt;</span>SimpleActor<span class="token punctuation">&lt></span> ref = TestActorRef.<span class="java_function"> create</span>(system, props, <span class="java_string">"test-simple-actor"</span>);
+                    TestActorRef<span class="token punctuation">&lt;</span>SimpleActor<span class="token punctuation">&lt></span> ref = TestActorRef.<span class="java_function">create</span>(system, props, <span class="java_string">"test-simple-actor"</span>);
                     // access actor methods and state
-                    SimpleActor actor = ref.<span class="java_function"> underlyingActor</span>();
+                    SimpleActor actor = ref.<span class="java_function">underlyingActor</span>();
                     // actor.getGreeting();
                     ref.<span class="java_function">tell</span>(<span class="java_string">"Hello"</span>, null);
                 }
 
-                @Test
+                <span class="java_annotation">@Test</span>
                 <span class="java_keyword">public void</span> <span class="java_function"> testAskHello</span>() {
 
                     Props props = Props.create(SimpleActor.class);
-                    TestActorRef<span class="token punctuation">&lt;</span>SimpleActor<span class="token punctuation">&lt></span> ref = TestActorRef.create(system, props, <span class="java_string">"test-simple-actor"</span>);
+                    TestActorRef<span class="token punctuation">&lt;</span>SimpleActor<span class="token punctuation">&lt></span> ref = TestActorRef.<span class="java_function">create</span>(system, props, <span class="java_string">"test-simple-actor"</span>);
                     CompletableFuture<span class="token punctuation">&lt;</span>Object<span class="token punctuation">&lt></span> future = PatternsCS.<span class="java_function">ask</span>(ref, <span class="java_string">"Hello"</span>, 1000).toCompletableFuture();
                     assertEquals(<span class="java_string">"World"</span>, future.join());
                 }
 
-                @Test
+                <span class="java_annotation">@Test</span>
                 <span class="java_keyword">public void</span> <span class="java_function"> testTellWithProbe</span>() {
 
                     JavaTestKit probe = new JavaTestKit(system);
@@ -278,16 +289,16 @@
                     probe.expectMsgEquals(duration(<span class="java_string">"1 second"</span>), <span class="java_string">"World"</span>);
                 }
 
-                @Before
+                <span class="java_annotation">@Before</span>
                 <span class="java_keyword">public void</span><span class="java_function"> setup</span>() {
 
                     system = ActorSystem.create();
                 }
 
-                @After
+                <span class="java_annotation">@After</span>
                 <span class="java_keyword">public void</span> <span class="java_function">teardown()</span> {
 
-                JavaTestKit.<span class="java_function">shutdownActorSystem</span>(system);
+                    JavaTestKit.<span class="java_function">shutdownActorSystem</span>(system);
                 }
             }
         </div>

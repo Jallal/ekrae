@@ -134,22 +134,22 @@
         <!--Start oc code section -->
         <p>&#8195;</p>
         <div class="code_section" spellcheck="false">
-            import java.util.Arrays;
-            public static void merge(int[] X, int[] Y){
+            <span class="java_keyword">import</span> java.util.Arrays;
+            <span class="java_keyword">public static void</span> <span class="java_function">merge</span>(int[] X, int[] Y){
 
-            int m = X.length;
-            int n = Y.length;
-            for (int i = 0; i < m; i++){
-                if (X[i] > Y[0]){
-                    int temp = X[i];
-                    X[i] = Y[0];
-                    Y[0] = temp;
-                    int first = Y[0];
-                    int k;
-            for (k = 1; k < n && Y[k] < first; k++) {
-                Y[k - 1] = Y[k];
-            }
-                Y[k - 1] = first;
+                <span class="java_keyword">int</span> m = X.<span class="java_function">length</span>;
+                <span class="java_keyword">int</span> n = Y.<span class="java_function">length</span>;
+                <span class="java_keyword">for</span> (<span class="java_keyword">int</span> i = 0; i < m; i++){
+                    <span class="java_keyword">if</span> (X[i] > Y[0]){
+                            <span class="java_function">int</span> temp = X[i];
+                            X[i] = Y[0];
+                            Y[0] = temp;
+                            <span class="java_keyword">int</span> first = Y[0];
+                            <span class="java_keyword">int</span> k;
+                    <span class="java_keyword">for</span> (k = 1; k < n && Y[k] < first; k++) {
+                         Y[k - 1] = Y[k];
+                    }
+                    Y[k - 1] = first;
             } } }
         </div>
         <p>&#8201;</p>
@@ -158,13 +158,13 @@
         <!--Start oc code section -->
         <p>&#8201;</p>
         <div class="code_section" spellcheck="false">
-            public static void main (String[] args){
+            <span class="java_keyword">public static void</span> <span class="java_function">main</span> (<span class="java_keyword">String[]</span> args){
 
-            int[] X = { 1, 4, 7, 8, 10 };
-            int[] Y = { 2, 3, 9 };
-            merge(X, Y);
-            System.out.println("X: " + Arrays.toString(X));
-            System.out.println("Y: " + Arrays.toString(Y));
+                <span class="java_keyword">int[]</span> X = { 1, 4, 7, 8, 10 };
+                <span class="java_keyword">int[]</span> Y = { 2, 3, 9 };
+                <span class="java_function">merge</span>(X, Y);
+                <span class="java_keyword">System.out.println</span>(<span class="java_string">"X: "</span> + <span class="java_keyword">Arrays</span>.<span class="java_function">toString</span>(X));
+                <span class="java_keyword">System.out.println</span>(<span class="java_string">"Y: "</span> + <span class="java_keyword">Arrays</span>.<span class="java_function">toString</span>(Y));
             }
         </div>
         <p>&#8201;</p>

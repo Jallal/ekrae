@@ -124,31 +124,17 @@
         <!--Start oc code section -->
         <p>&#8195;</p>
         <div class="code_section" spellcheck="false">
-            // Naive method to find a pair in an array with given sum
-            public static void findPair(int[] A, int sum)
-            {
-            // create an empty Hash Map
-            Map<Integer, Integer> map = new HashMap<>();
-
-            // do for each element
-            for (int i = 0; i < A.length; i++)
-            {
-            // check if pair (arr[i], sum-arr[i]) exists
-
-            // if difference is seen before, print the pair
-            if (map.containsKey(sum - A[i]))
-            {
-            System.out.println("Pair found at index " +
-            map.get(sum - A[i]) + " and " + i);
-            return;
-            }
-
-            // store index of current element in the map
-            map.put(A[i], i);
-            }
-
-            // No pair with given sum exists in the array
-            System.out.println("Pair not found");
+            <span class="java_keyword">public static void</span> <span class="java_function">findPair</span>(int[] A, int sum) {
+                    Map<Integer, Integer> map = new <span class="java_function">HashMap<>()</span>;
+                    for (<span class="java_keyword">int</span> i = 0; i < A.<span class="java_function">length</span>; i++) {
+                        if (map.<span class="java_function">containsKey</span>(sum - A[i])) {
+                            <span class="java_keyword">System.out.println</span>(<span class="java_string">"Pair found at index "</span> +
+                            map.<span class="java_function">get</span>(sum - A[i]) + <span class="java_string">" and "</span> + i);
+                            <span class="java_keyword">return</span>;
+                        }
+                            map.<span class="java_function">put</span>(A[i], i);
+                    }
+                    <span class="java_keyword">System.out.println</span>(<span class="java_string">"Pair not found"</span>);
             }
         </div>
         <p>&#8201;</p>
@@ -157,11 +143,11 @@
         <!--Start oc code section -->
         <p>&#8201;</p>
         <div class="code_section" spellcheck="false">
-            public static void main (String[] args) {
+            <span class="java_keyword">public static void</span> main (String[] args) {
 
-            int[] A = { 8, 7, 2, 5, 3, 1 };
-            int sum = 10;
-            findPair(A, sum);
+                <span class="java_keyword">int[]</span> A = { 8, 7, 2, 5, 3, 1 };
+                <span class="java_keyword">int</span> sum = 10;
+                <span class="java_function">findPair</span>(A, sum);
             }
         </div>
         <p>&#8201;</p>

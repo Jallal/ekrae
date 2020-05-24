@@ -102,7 +102,7 @@ public class MainController {
     @RequestMapping("/welcome/{searchString}")
     public ModelAndView getTopicsBykeywordFromArticles(@PathVariable("searchString") String searchString) {
 
-        this.searchString = searchString.toLowerCase();
+        this.searchString = searchString;
         return new ModelAndView("redirect:/welcome");
     }
 
