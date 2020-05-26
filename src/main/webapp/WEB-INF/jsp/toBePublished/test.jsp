@@ -1,7 +1,7 @@
 < lang="en">
 <head>
-    <script src="/js/popper.min.js"></script>
-    <script src="/js/bootstrap.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -10,14 +10,14 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/navbar-fixed/">
 
     <!-- Bootstrap core CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
 
     <!--have Ajx work -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
-<body>
+<body onload="fire_ajax_submit(search)">
 <-- Start of header -->
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <br>&#8195;</br>
@@ -75,7 +75,7 @@
                                class="reader-author-info__meta-image ember-view">
                                 <div id="ember55" class="ml2 feed-shared-avatar-image b0 member ember-view">
                                     <div id="ember56" class="presence-entity presence-entity--size-4 ember-view">
-                                        <img title="Tom Goldenberg" src="/images/rick.jpeg" loading="lazy"
+                                        <img title="Tom Goldenberg" src="/static/images/rick.jpeg" loading="lazy"
                                              alt="Tom Goldenberg" id="ember57"
                                              class="avatar member EntityPhoto-circle-4 presence-entity__image EntityPhoto-circle-4 lazy-image ember-view">
                                         <div id="ember58"
@@ -298,7 +298,7 @@
             timeout: 600000,
             success: function (data) {
                 var html = '';
-                html += "<a data-control-name=\"read_activity\" href=\"\" id=\"ember91\" class=\"reader-author-info__total-articles link-without-visited-state ember-view\">" + data.publicationsCount + " articles</a>";
+                html +="<a data-control-name=\"read_activity\" href=\"/welcome\" id=\"ember91\" class=\"reader-author-info__total-articles link-without-visited-state ember-view\">"+data.publicationsCount+" articles</a>";
                 html += "<button data-control-name=\"actor_follow_toggle\" aria-pressed=\"false\" aria-label=\"Follow\"id=\"ember64\"class=\"follow reader-author-info__follow-button artdeco-button artdeco-button--secondary ml2 ember-view\">";
                 html += "<li-icon aria-hidden=\"true\" type=\"plus-icon\" class=\"artdeco-button__icon\" size=\"small\">";
                 html += "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\" data-supported-dps=\"16x16\" fill=\"currentColor\" width=\"16\" height=\"16\" focusable=\"false\">";

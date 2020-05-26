@@ -17,7 +17,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
-<body>
+<body onload="fire_ajax_submit(search)">
 <-- Start of header -->
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <br>&#8195;</br>
@@ -112,13 +112,10 @@
         <p>&#8195;</p>
         <h2><strong>What is Akka?</strong></h2>
         <p>&#8201;</p>
-        <p>Akka toolkit, an open source project built by Lightbend, provides a simpler, single programming model one way of coding for concurrent and distributed
-        applications the actor programming model. Actors are (fitting for our industry) nothing new at all, in and of themselves. It’s the way that actors are provided in
-        Akka to scale applications both up and out on the JVM that’s unique. As you’ll see, Akka uses resources efficiently and makes
-        it possible to keep the complexity relatively low while an application scales.
-        Akka’s primary goal is to make it simpler to build applications that are deployed in the cloud or run on devices with many
-        cores and that efficiently leverage the full capacity of the computing power available. It’s a toolkit that provides an actor programming model, runtime, and required supporting
-        tools for building scalable applications.
+        <p>Akka toolkit, is an open source project, provides a simple, single programming model - one way of coding for concurrent and distributed applications- the actor programming model.
+            The actors are provided in Akka to scale applications both up and out on the JVM that's unique. Akka uses resources efficiently and make possible to keep the complexity relatively low while an application scales.
+            Akka's primary goal is to make it simpler to build applications that are deployed in the cloud and run on devices with many cores that are efficiently leverage to full capacity of the computing power available.
+            It's a toolkit that provides an actor programming model, runtime, and required supporting tools for building scalable applications.
         </p>
         <p>&#8195;</p>
         <h2><strong>Akka Maven dependency</strong></h2>
@@ -139,6 +136,27 @@
                         class="token punctuation">&lt;/</span>version</span><span class="token punctuation">&gt;</span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span></code></pre>
         </div>
+        <p>&#8195;</p>
+        <h2><strong>Akka Maven test dependency</strong></h2>
+        <p>&#8201;</p>
+        <div class="code_section" spellcheck="false">
+            <pre class=" language-markup"><code class=" language-markup"><span class="token tag"><span
+                    class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span
+                    class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span
+           class="token punctuation">&gt;</span></span>com.typesafe.akka<span class="token tag"><span class="token tag"><span
+                        class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span
+           class="token punctuation">&gt;</span></span>akka-actor_2.11<span class="token tag"><span
+                        class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span
+                        class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>scope</span><span
+           class="token punctuation">&gt;</span></span>test<span class="token tag"><span class="token tag"><span
+                        class="token punctuation">&lt;/</span>scope</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span></code></pre>
+        </div>
+
+
         <p>&#8195;</p>
         <h2><strong>ActorSystem& Dispatchers</strong></h2>
         <p>&#8201;</p>
@@ -314,14 +332,12 @@
     $(document).ready(function () {
         $(".Java-Topics").on("click", function(evt) {
             evt.preventDefault();
-            console.log("*****************ASTA LAVISTA BABAY*********************");
             var search = {};
             search["tag"]='java';
             searchByKeyWords(search);
         });
 
         $(".Springboot-Topics").on("click", function(evt) {
-            console.log("*****************ASTA LAVISTA BABAY*********************");
             evt.preventDefault();
             var search = {};
             search["tag"]='springboot';
@@ -329,7 +345,6 @@
         });
 
         $(".Interviews-Topics").on("click", function(evt) {
-            console.log("*****************ASTA LAVISTA BABAY*********************");
             evt.preventDefault();
             var search = {};
             search["tag"]='interviews';
@@ -354,6 +369,30 @@
         });
         return false;
     }
+    function fire_ajax_submit(search) {
+        jQuery.ajax({
+            type: "POST",
+            contentType: "application/json",
+            url: "/update/article",
+            data: JSON.stringify(search),
+            dataType: 'json',
+            cache: false,
+            timeout: 600000,
+            success: function (data) {
+                var html = '';
+                html +="<a data-control-name=\"read_activity\" href=\"/welcome\" id=\"ember91\" class=\"reader-author-info__total-articles link-without-visited-state ember-view\">"+data.publicationsCount+" articles</a>";
+                html +="<button data-control-name=\"actor_follow_toggle\" aria-pressed=\"false\" aria-label=\"Follow\"id=\"ember64\"class=\"follow reader-author-info__follow-button artdeco-button artdeco-button--secondary ml2 ember-view\">";
+                html +="<li-icon aria-hidden=\"true\" type=\"plus-icon\" class=\"artdeco-button__icon\" size=\"small\">";
+                html +="<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\" data-supported-dps=\"16x16\" fill=\"currentColor\" width=\"16\" height=\"16\" focusable=\"false\">";
+                html +="<path d=\"M14 9H9v5H7V9H2V7h5V2h2v5h5v2z\"></path> </svg> </li-icon> <span aria-hidden=\"true\">Follow</span> </button>";
+                $("#articleCount").html(html);
+            },
+            error: function (e) {
+                var json = "<h4>Ajax Response</h4><pre>"+e.responseText+"</pre>";
+                $('#articleCount').html(json);
+                console.log("ERROR : ", e);
+            }
+        });
+    }
 </script>
-
 </html>

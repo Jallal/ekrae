@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Find pair with given sum in an array</title>
+    <title>Producing a SOAP web service</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/navbar-fixed/">
 
     <!-- Bootstrap core CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
+
     <!--have Ajx work -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -55,12 +56,12 @@
 <main role="main" class="container">
     <div class="jumbotron_article">
         <!--Aticle title-->
-        <h1 class="reader-article-header__title t-40 t-black t-normal pv4">Find pair with given sum in an array</h1>
+        <h1 class="reader-article-header__title t-40 t-black t-normal pv4">Producing a SOAP web service&nbsp;</h1>
         <!-- Article publisher date-->
         <br>
         <ul class="reader-article-header__meta t-14 t-black--light t-normal mv4">
             <li>
-                <time class="reader-article-header__publish-date">Published on May 10, 2020</time>
+                <time class="reader-article-header__publish-date">Published on May 25, 2020</time>
             </li>
         </ul>
         <!-- Author information -->
@@ -110,63 +111,137 @@
         <!-- Author information end -->
         <!-- start of paragraph section -->
         <p>&#8195;</p>
-        <h2><strong>Problem statement</strong></h2>
+        <h2><strong>What will we build</strong></h2>
         <p>&#8201;</p>
         <p>
-            In this example, let assume you will have two unsorted arrays of integers. Find a pair with a given sum.
+            You will build a server that exposes data from various European countries by using a WSDL-based SOAP web service.
         </p>
         <p>&#8195;</p>
-        <h2><strong>Solution</strong></h2>
+        <h2><strong>Springboot web starter dependency</strong></h2>
         <p>&#8201;</p>
-        <p>
-            You can use a map to solve the above problem in linear time. We use the map to insert each element of the array . We also check if the difference between the element in i and the sum-i in the map already exist. If the difference exist we print and exit.
-        </p>
-        <!--Start oc code section -->
+        <div class="code_section" spellcheck="false">
+            <pre class=" language-markup"><code class=" language-markup"><span class="token tag"><span
+                    class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span
+                    class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span
+           class="token punctuation">&gt;</span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span
+                        class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span
+           class="token punctuation">&gt;</span></span>spring-boot-starter-web<span class="token tag"><span
+                        class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span
+                        class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span></code></pre>
+        </div>
         <p>&#8195;</p>
-        <div class="code_section" spellcheck="false">
-            <span class="java_keyword">public static void</span> <span class="java_function">findPair</span>(int[] A, int sum) {
-                    Map<Integer, Integer> map = new <span class="java_function">HashMap<>()</span>;
-                    for (<span class="java_keyword">int</span> i = 0; i < A.<span class="java_function">length</span>; i++) {
-                        if (map.<span class="java_function">containsKey</span>(sum - A[i])) {
-                            <span class="java_keyword">System.out.println</span>(<span class="java_string">"Pair found at index "</span> +
-                            map.<span class="java_function">get</span>(sum - A[i]) + <span class="java_string">" and "</span> + i);
-                            <span class="java_keyword">return</span>;
-                        }
-                            map.<span class="java_function">put</span>(A[i], i);
-                    }
-                    <span class="java_keyword">System.out.println</span>(<span class="java_string">"Pair not found"</span>);
-            }
-        </div>
-        <p>&#8201;</p>
-        <!--End oc code section -->
-        <p>Below is the testing function that will test the above code:</p>
-        <!--Start oc code section -->
+        <h2><strong>Springboot web-service dependency</strong></h2>
         <p>&#8201;</p>
         <div class="code_section" spellcheck="false">
-            <span class="java_keyword">public static void</span> main (String[] args) {
-
-                <span class="java_keyword">int[]</span> A = { 8, 7, 2, 5, 3, 1 };
-                <span class="java_keyword">int</span> sum = 10;
-                <span class="java_function">findPair</span>(A, sum);
-            }
+            <pre class=" language-markup"><code class=" language-markup"><span class="token tag"><span
+                    class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span
+                    class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span
+           class="token punctuation">&gt;</span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span
+                        class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span
+           class="token punctuation">&gt;</span></span>spring-boot-starter-web-service<span class="token tag"><span
+                        class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span
+                        class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span></code></pre>
         </div>
-        <p>&#8201;</p>
+        <p>&#8195;</p>
         <!--End oc code section -->
         <!--start of the out put data-->
-        <h2><strong>Program output</strong></h2>
+        <h2><strong>Configuration class</strong></h2>
         <p>&#8201;</p>
         <div class="code_section" spellcheck="false">
-            <p> Pair found at index 0 and 2</p>
+            <span class="java_keyword">import</span> org.springframework.boot.web.servlet.ServletRegistrationBean;
+            <span class="java_keyword">import</span> org.springframework.context.ApplicationContext;
+            <span class="java_keyword">import</span> org.springframework.context.annotation.Bean;
+            <span class="java_keyword">import</span> org.springframework.context.annotation.Configuration;
+            <span class="java_keyword">import</span> org.springframework.core.io.ClassPathResource;
+            <span class="java_keyword">import</span> org.springframework.ws.config.annotation.EnableWs;
+            <span class="java_keyword">import</span> org.springframework.ws.config.annotation.WsConfigurerAdapter;
+            <span class="java_keyword">import</span> org.springframework.ws.transport.http.MessageDispatcherServlet;
+            <span class="java_keyword">import</span> org.springframework.ws.wsdl.wsdl11.DefaultWsdl11Definition;
+            <span class="java_keyword">import</span> org.springframework.xml.xsd.SimpleXsdSchema;
+            <span class="java_keyword">import</span> org.springframework.xml.xsd.XsdSchema;
+
+            <span class="java_annotation">@EnableWs</span>
+            <span class="java_annotation">@Configuration</span>
+            <span class="java_keyword">public class</span> WebServiceConfig <span class="java_keyword">extends</span> WsConfigurerAdapter {
+            <span class="java_annotation">@Bean</span>
+            <span class="java_keyword">public</span> ServletRegistrationBean <span class="java_function">messageDispatcherServlet</span>(ApplicationContext applicationContext) {
+
+                    MessageDispatcherServlet servlet = <span class="java_keyword">new</span> MessageDispatcherServlet();
+                    servlet.<span class="java_function">setApplicationContext</span>(applicationContext);
+                    servlet.<span class="java_function">setTransformWsdlLocations</span>(true);
+                    <span class="java_keyword">return new</span> ServletRegistrationBean(servlet, <span class="java_string">"/ws/*"</span>);
+                }
+
+            <span class="java_annotation">@Bean</span>(name = <span class="java_string">"countries"</span>)
+            <span class="java_keyword">public</span> DefaultWsdl11Definition <span class="java_function">defaultWsdl11Definition</span>(XsdSchema countriesSchema) {
+
+                    DefaultWsdl11Definition wsdl11Definition = <span class="java_keyword">new</span> DefaultWsdl11Definition();
+                    wsdl11Definition.<span class="java_function">setPortTypeName</span>(<span class="java_string">"CountriesPort"</span>);
+                    wsdl11Definition.<span class="java_function">setLocationUri</span>(<span class="java_string">"/ws"</span>);
+                    wsdl11Definition.<span class="java_function">setTargetNamespace</span>(<span class="java_string">"http://spring.io/guides/gs-producing-web-service"</span>);
+                    wsdl11Definition.<span class="java_function">setSchema</span>(countriesSchema);
+                    <span class="java_keyword">return</span> wsdl11Definition;
+                }
+
+            <span class="java_annotation">@Bean</span>
+            <span class="java_keyword">public</span> XsdSchema <span class="java_function">countriesSchema</span>() {
+
+                    <span class="java_keyword">return new</span> SimpleXsdSchema(new ClassPathResource(<span class="java_string">"countries.xsd"</span>));
+                }
+            }
         </div>
         <p>&#8201;</p>
-        <h2><strong>Code analysis</strong></h2>
+        <h2><strong>SOAP endpoint object</strong></h2>
         <p>&#8201;</p>
-        <p> The time complexity for this olution is O(n) and auxiliary space used by the program is O(n)</p>
+        <div class="code_section" spellcheck="false">
+            <span class="java_keyword">import</span> org.springframework.beans.factory.annotation.Autowired;
+            <span class="java_keyword">import</span> org.springframework.ws.server.endpoint.annotation.Endpoint;
+            <span class="java_keyword">import</span> org.springframework.ws.server.endpoint.annotation.PayloadRoot;
+            <span class="java_keyword">import</span> org.springframework.ws.server.endpoint.annotation.RequestPayload;
+            <span class="java_keyword">import</span> org.springframework.ws.server.endpoint.annotation.ResponsePayload;
+            <span class="java_keyword">import</span> io.spring.guides.gs_producing_web_service.GetCountryRequest;
+            <span class="java_keyword">import</span> io.spring.guides.gs_producing_web_service.GetCountryResponse;
+
+            <span class="java_annotation">@Endpoint</span>
+            <span class="java_keyword">public class</span> CountryEndpoint {
+            <span class="java_keyword">private static final String</span> NAMESPACE_URI = <span class="java_string">"http://spring.io/guides/gs-producing-web-service"</span>;
+
+            <span class="java_keyword">private</span> CountryRepository countryRepository;
+
+            <span class="java_annotation">@Autowired</span>
+            <span class="java_keyword">public</span> <span class="java_function">CountryEndpoint</span>(CountryRepository countryRepository) {
+
+                    <span class="java_keyword">this</span>.countryRepository = countryRepository;
+             }
+
+            <span class="java_annotation">@PayloadRoot</span>(namespace = NAMESPACE_URI, localPart = <span class="java_string">"getCountryRequest"</span>)
+            <span class="java_annotation">@ResponsePayload</span>
+            <span class="java_keyword">public</span> GetCountryResponse <span class="java_function">getCountry</span>( <span class="java_annotation">@RequestPayload</span> GetCountryRequest request) {
+
+                    GetCountryResponse response = <span class="java_keyword">new</span> GetCountryResponse();
+                    response.<span class="java_function">setCountry</span>(countryRepository.<span class="java_function">findCountry</span>(request.<span class="java_function">getName()</span>));
+                     <span class="java_keyword">return</span> response;
+                }
+            }
+        </div>
+    </div>
+
+        <p>&#8201;</p>
+
     </div>
 </main>
 <p>&#8201;</p>
-<p>&#8201;</p>
 </body>
+
+
+
+
 
 <script>
 
@@ -245,4 +320,5 @@
         return false;
     }
 </script>
+
 </html>

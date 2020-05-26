@@ -18,7 +18,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 
-<body>
+<body onload="fire_ajax_submit(search)">
 
 <-- Start of header -->
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -137,19 +137,19 @@
             <span class="java_keyword">import</span> java.util.Arrays;
             <span class="java_keyword">public static void</span> <span class="java_function">merge</span>(int[] X, int[] Y){
 
-                <span class="java_keyword">int</span> m = X.<span class="java_function">length</span>;
-                <span class="java_keyword">int</span> n = Y.<span class="java_function">length</span>;
-                <span class="java_keyword">for</span> (<span class="java_keyword">int</span> i = 0; i < m; i++){
-                    <span class="java_keyword">if</span> (X[i] > Y[0]){
-                            <span class="java_function">int</span> temp = X[i];
-                            X[i] = Y[0];
-                            Y[0] = temp;
-                            <span class="java_keyword">int</span> first = Y[0];
-                            <span class="java_keyword">int</span> k;
-                    <span class="java_keyword">for</span> (k = 1; k < n && Y[k] < first; k++) {
-                         Y[k - 1] = Y[k];
-                    }
-                    Y[k - 1] = first;
+            <span class="java_keyword">int</span> m = X.<span class="java_function">length</span>;
+            <span class="java_keyword">int</span> n = Y.<span class="java_function">length</span>;
+            <span class="java_keyword">for</span> (<span class="java_keyword">int</span> i = 0; i < m; i++){
+            <span class="java_keyword">if</span> (X[i] > Y[0]){
+            <span class="java_function">int</span> temp = X[i];
+            X[i] = Y[0];
+            Y[0] = temp;
+            <span class="java_keyword">int</span> first = Y[0];
+            <span class="java_keyword">int</span> k;
+            <span class="java_keyword">for</span> (k = 1; k < n && Y[k] < first; k++) {
+            Y[k - 1] = Y[k];
+            }
+            Y[k - 1] = first;
             } } }
         </div>
         <p>&#8201;</p>
@@ -160,11 +160,11 @@
         <div class="code_section" spellcheck="false">
             <span class="java_keyword">public static void</span> <span class="java_function">main</span> (<span class="java_keyword">String[]</span> args){
 
-                <span class="java_keyword">int[]</span> X = { 1, 4, 7, 8, 10 };
-                <span class="java_keyword">int[]</span> Y = { 2, 3, 9 };
-                <span class="java_function">merge</span>(X, Y);
-                <span class="java_keyword">System.out.println</span>(<span class="java_string">"X: "</span> + <span class="java_keyword">Arrays</span>.<span class="java_function">toString</span>(X));
-                <span class="java_keyword">System.out.println</span>(<span class="java_string">"Y: "</span> + <span class="java_keyword">Arrays</span>.<span class="java_function">toString</span>(Y));
+            <span class="java_keyword">int[]</span> X = { 1, 4, 7, 8, 10 };
+            <span class="java_keyword">int[]</span> Y = { 2, 3, 9 };
+            <span class="java_function">merge</span>(X, Y);
+            <span class="java_keyword">System.out.println</span>(<span class="java_string">"X: "</span> + <span class="java_keyword">Arrays</span>.<span class="java_function">toString</span>(X));
+            <span class="java_keyword">System.out.println</span>(<span class="java_string">"Y: "</span> + <span class="java_keyword">Arrays</span>.<span class="java_function">toString</span>(Y));
             }
         </div>
         <p>&#8201;</p>
@@ -173,7 +173,7 @@
         <h2><strong>Program output</strong></h2>
         <p>&#8201;</p>
         <div class="code_section" spellcheck="false">
-        <p> X = 1 2 3 4 7 and  Y = 8 9 10</p>
+            <p> X = 1 2 3 4 7 and  Y = 8 9 10</p>
         </div>
         <p>&#8201;</p>
         <h2><strong>Code analysis</strong></h2>
@@ -195,14 +195,12 @@
     $(document).ready(function () {
         $(".Java-Topics").on("click", function(evt) {
             evt.preventDefault();
-            console.log("*****************ASTA LAVISTA BABAY*********************");
             var search = {};
             search["tag"]='java';
             fire_ajax_submit(search);
         });
 
         $(".Springboot-Topics").on("click", function(evt) {
-            console.log("*****************ASTA LAVISTA BABAY*********************");
             evt.preventDefault();
             var search = {};
             search["tag"]='springboot';
@@ -210,7 +208,6 @@
         });
 
         $(".Interviews-Topics").on("click", function(evt) {
-            console.log("*****************ASTA LAVISTA BABAY*********************");
             evt.preventDefault();
             var search = {};
             search["tag"]='interviews';
@@ -246,7 +243,7 @@
             timeout: 600000,
             success: function (data) {
                 var html = '';
-                html +="<a data-control-name=\"read_activity\" href=\"\" id=\"ember91\" class=\"reader-author-info__total-articles link-without-visited-state ember-view\">"+data.publicationsCount+" articles</a>";
+                html +="<a data-control-name=\"read_activity\" href=\"/welcome\" id=\"ember91\" class=\"reader-author-info__total-articles link-without-visited-state ember-view\">"+data.publicationsCount+" articles</a>";
                 html +="<button data-control-name=\"actor_follow_toggle\" aria-pressed=\"false\" aria-label=\"Follow\"id=\"ember64\"class=\"follow reader-author-info__follow-button artdeco-button artdeco-button--secondary ml2 ember-view\">";
                 html +="<li-icon aria-hidden=\"true\" type=\"plus-icon\" class=\"artdeco-button__icon\" size=\"small\">";
                 html +="<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\" data-supported-dps=\"16x16\" fill=\"currentColor\" width=\"16\" height=\"16\" focusable=\"false\">";
