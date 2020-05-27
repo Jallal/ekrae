@@ -211,18 +211,17 @@
             <span class="java_annotation">@Endpoint</span>
             <span class="java_keyword">public class</span> CountryEndpoint {
             <span class="java_keyword">private static final String</span> NAMESPACE_URI = <span class="java_string">"http://spring.io/guides/gs-producing-web-service"</span>;
-
             <span class="java_keyword">private</span> CountryRepository countryRepository;
 
-            <span class="java_annotation">@Autowired</span>
-            <span class="java_keyword">public</span> <span class="java_function">CountryEndpoint</span>(CountryRepository countryRepository) {
+                <span class="java_annotation">@Autowired</span>
+                <span class="java_keyword">public</span> <span class="java_function">CountryEndpoint</span>(CountryRepository countryRepository) {
 
                     <span class="java_keyword">this</span>.countryRepository = countryRepository;
-             }
+                }
 
-            <span class="java_annotation">@PayloadRoot</span>(namespace = NAMESPACE_URI, localPart = <span class="java_string">"getCountryRequest"</span>)
-            <span class="java_annotation">@ResponsePayload</span>
-            <span class="java_keyword">public</span> GetCountryResponse <span class="java_function">getCountry</span>( <span class="java_annotation">@RequestPayload</span> GetCountryRequest request) {
+                <span class="java_annotation">@PayloadRoot</span>(namespace = NAMESPACE_URI, localPart = <span class="java_string">"getCountryRequest"</span>)
+                <span class="java_annotation">@ResponsePayload</span>
+                <span class="java_keyword">public</span> GetCountryResponse <span class="java_function">getCountry</span>( <span class="java_annotation">@RequestPayload</span> GetCountryRequest request) {
 
                     GetCountryResponse response = <span class="java_keyword">new</span> GetCountryResponse();
                     response.<span class="java_function">setCountry</span>(countryRepository.<span class="java_function">findCountry</span>(request.<span class="java_function">getName()</span>));
@@ -231,8 +230,85 @@
             }
         </div>
     </div>
-
         <p>&#8201;</p>
+    <h2><strong>SOAP endpoint with Security header</strong></h2>
+    <p>&#8201;</p>
+    <div class="code_section" spellcheck="false">
+        <span class="java_keyword">import</span> org.springframework.beans.factory.annotation.Autowired;
+        <span class="java_keyword">import</span> org.springframework.ws.server.endpoint.annotation.Endpoint;
+        <span class="java_keyword">import</span> org.springframework.ws.server.endpoint.annotation.PayloadRoot;
+        <span class="java_keyword">import</span> org.springframework.ws.server.endpoint.annotation.RequestPayload;
+        <span class="java_keyword">import</span> org.springframework.ws.server.endpoint.annotation.ResponsePayload;
+        <span class="java_keyword">import</span> io.spring.guides.gs_producing_web_service.GetCountryRequest;
+        <span class="java_keyword">import</span> io.spring.guides.gs_producing_web_service.GetCountryResponse;
+
+                <span class="java_annotation">@Endpoint</span>
+                <span class="java_keyword">public class</span> CountryEndpoint {
+                <span class="java_keyword">private static final String</span> NAMESPACE_URI = <span class="java_string">"http://spring.io/guides/gs-producing-web-service"</span>;
+
+                <span class="java_keyword">private</span> CountryRepository countryRepository;
+
+                <span class="java_annotation">@Autowired</span>
+                <span class="java_keyword">public</span> <span class="java_function">CountryEndpoint</span>(CountryRepository countryRepository) {
+
+                <span class="java_keyword">this</span>.countryRepository = countryRepository;
+                }
+
+            <span class="java_annotation">@PayloadRoot</span>(namespace = NAMESPACE_URI, localPart = <span class="java_string">"getCountryRequest"</span>)
+            <span class="java_annotation">@ResponsePayload</span>
+            <span class="java_keyword">public</span> GetCountryResponse <span class="java_function">getCountry</span>(
+            <span class="java_annotation">@RequestPayload</span> GetCountryRequest request,
+            <span class="java_annotation">@SoapHeader</span>(value = <span class="java_string">"{http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd}Security"</span>) SoapHeaderElement auth) {
+
+                //resolve security header
+                JAXBContext context = JAXBContext.newInstance(SoapSecurity.class);
+                Unmarshaller unmarshaller = context.createUnmarshaller();
+                SoapSecurity soapSecurity = (SoapSecurity) unmarshaller.unmarshal(auth.getSource());
+
+                GetCountryResponse response = <span class="java_keyword">new</span> GetCountryResponse();
+                response.<span class="java_function">setCountry</span>(countryRepository.<span class="java_function">findCountry</span>(request.<span class="java_function">getName()</span>));
+                <span class="java_keyword">return</span> response;
+            }
+        }
+    </div>
+    </div>
+    <p>&#8201;</p>
+    <h2><strong>SOAP endpoint with a header variable</strong></h2>
+    <p>&#8201;</p>
+    <div class="code_section" spellcheck="false">
+        <span class="java_keyword">import</span> org.springframework.beans.factory.annotation.Autowired;
+        <span class="java_keyword">import</span> org.springframework.ws.server.endpoint.annotation.Endpoint;
+        <span class="java_keyword">import</span> org.springframework.ws.server.endpoint.annotation.PayloadRoot;
+        <span class="java_keyword">import</span> org.springframework.ws.server.endpoint.annotation.RequestPayload;
+        <span class="java_keyword">import</span> org.springframework.ws.server.endpoint.annotation.ResponsePayload;
+        <span class="java_keyword">import</span> io.spring.guides.gs_producing_web_service.GetCountryRequest;
+        <span class="java_keyword">import</span> io.spring.guides.gs_producing_web_service.GetCountryResponse;
+
+        <span class="java_annotation">@Endpoint</span>
+        <span class="java_keyword">public class</span> CountryEndpoint {
+        <span class="java_keyword">private static final String</span> NAMESPACE_URI = <span class="java_string">"http://spring.io/guides/gs-producing-web-service"</span>;
+        <span class="java_keyword">private</span> CountryRepository countryRepository;
+
+            <span class="java_annotation">@Autowired</span>
+            <span class="java_keyword">public</span> <span class="java_function">CountryEndpoint</span>(CountryRepository countryRepository) {
+
+                <span class="java_keyword">this</span>.countryRepository = countryRepository;
+            }
+
+            <span class="java_annotation">@PayloadRoot</span>(namespace = NAMESPACE_URI, localPart = <span class="java_string">"getCountryRequest"</span>)
+            <span class="java_annotation">@ResponsePayload</span>
+            <span class="java_keyword">public</span> GetCountryResponse <span class="java_function">getCountry</span>(
+            <span class="java_annotation">@RequestPayload</span> GetCountryRequest request,
+            <span class="java_annotation">@SoapHeader</span>(value = <span class="java_string">"{http://schemas.xmlsoap.org/soap/envelope/}param"</span>) SoapHeaderElement headerVariable) {
+
+                GetCountryResponse response = <span class="java_keyword">new</span> GetCountryResponse();
+                response.<span class="java_function">setCountry</span>(countryRepository.<span class="java_function">findCountry</span>(request.<span class="java_function">getName()</span>));
+                <span class="java_keyword">return</span> response;
+            }
+        }
+    </div>
+    </div>
+    <p>&#8201;</p>
 
     </div>
 </main>
