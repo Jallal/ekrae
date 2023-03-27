@@ -1,9 +1,4 @@
 import React,{useState} from 'react';
-import yaml from 'js-yaml';
-import Converter from './Converter.css'
-import { TileLayout } from "@progress/kendo-react-layout";
-//import ReactJson from 'react-json-view';
-import beautify from "json-beautify";
 
 class ConverterModule extends React.Component {
 
@@ -26,11 +21,11 @@ class ConverterModule extends React.Component {
           handleChange(event) {
             console.log('********* handleChange!  '+ event.target.value)
             this.setState({value: event.target.value});
-            const jsonString = JSON.stringify(yaml.load(event.target.value));
+        
             console.log("$$$$$$$$$$$ Resulting Json :"+jsonString);
             //set the output JSON
             this.setState({
-                justClicked: JSON.parse(jsonString)
+                //justClicked: JSON.parse(jsonString)
               });
             }
         
@@ -45,12 +40,7 @@ class ConverterModule extends React.Component {
       render() {
         return (
 <>
-<div className="float-container">
-    <textarea className="float-child field" type="text" placeholder="Type-in any Yaml text here ....." value={this.state.value} onChange={this.handleChange}></textarea>
-    <div className="float-child field">
-    <ReactJson  src={this.state.justClicked}/>
-    </div>
-  </div>
+<h3>The <code>cool</code> Class</h3>
 </>
 );
 }

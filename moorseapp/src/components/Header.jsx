@@ -64,7 +64,7 @@ menuToggle.addEventListener('click', () => {
     <ul className="nav no-search" onClick={() => this.handleClick()}>
       <li className="nav-item"><a href="/">Home</a></li>
       <li className="nav-item"><a href="#">About</a></li>
-      <li className="nav-item"><a href="/JsonToYaml">Work</a></li>
+      <li className="nav-item"><a href="/BinaryTree">Work</a></li>
       <li className="nav-item"><a href="#">Careers</a></li>
       <li className="nav-item"><a href="#">Contact Us</a></li>
       <i className="fas fa-search" id="search-icon"></i>
@@ -72,8 +72,7 @@ menuToggle.addEventListener('click', () => {
     </ul>
   </nav> 
   </div>
-
-    </nav>
+  </nav>
 </>
 
     );

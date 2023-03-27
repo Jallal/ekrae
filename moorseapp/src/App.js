@@ -5,6 +5,7 @@ import Counter from './components/Counter'
 import Body from "./components/Body";
 import Footer from "./components/Footer";
 import JsonToYaml from "./components/JsonToYaml";
+import BinaryTree from "./components/binaryTree";
 import Home from "./components/Home";
 
 
@@ -35,7 +36,7 @@ return (
     <Footer/> */}
     <Routes>
     <Route path ="/" element={<Home/>} />
-    <Route path ="/JsonToYaml" element={<JsonToYaml />} />
+    <Route path ="/BinaryTree" element={<BinaryTree/>} />
     </Routes>
       </div>
     </>
