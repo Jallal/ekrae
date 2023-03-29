@@ -4,7 +4,7 @@ import Footer from "./Footer";
 import BinaryTree from './binaryTree'
 
 
-class JsonToYaml extends React.Component {
+class BinaryTree extends React.Component {
 
 
         handleClick = (yamlString) => {
@@ -25,4 +25,4 @@ return (
   );
 }
 }
-export default JsonToYaml;
+export default BinaryTree;

@@ -37,6 +37,7 @@ return (
     <Routes>
     <Route path ="/" element={<Home/>} />
     <Route path ="/BinaryTree" element={<BinaryTree/>} />
+    <Route path ="/JsonToYaml" element={<JsonToYaml/>} />
     </Routes>
       </div>
     </>
