@@ -6,6 +6,7 @@ class BinaryModule extends React.Component {
       render() {
         return (
 <>
+<div className="page-wrapper">
 <div className="feature-text-container">
 <h1>Kubernates in a nutshell</h1>
 <h2>What is Kubernetes?</h2>
@@ -42,10 +43,28 @@ class BinaryModule extends React.Component {
 <p>Minikube offers a complete test envirnment that runs on Linux, OS-X or Windows. Other test envirnments can also be used. In all cases, you'll need to have the kubectl client on your management platform.</p>
 
 
+<br></br>
+<h2>Using kubectl</h2>
+<p>The kubectl command is the generic command that allows you to manage all aspects of pods and containers. Use "kubectl create" to create a deployment or "kubectl get" to get information about the pods. Start with "kubectl completion -h"</p>
+
+
+
+
+
+
+
+<br></br>
+<h2>Hello</h2>
 
 
 
 </div>
+</div>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
 </>
 );
 }
