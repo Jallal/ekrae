@@ -4,15 +4,15 @@ import Footer from "./Footer";
 import BinaryTree from './binaryTree'
 
 
-class BinaryTree extends React.Component {
+class PresentBinaryTree extends React.Component {
 
 
-        handleClick = (yamlString) => {
+        // handleClick = (yamlString) => {
 
-            console.log('click!' + yamlString)
-            //const jsonString = JSON.stringify(yaml.safeLoad(yamlString));
-            console.log("Hello");
-            }
+        //     console.log('click!' + yamlString)
+        //     //const jsonString = JSON.stringify(yaml.safeLoad(yamlString));
+        //     console.log("Hello");
+        //     }
 
 render() {
 
@@ -25,4 +25,4 @@ return (
   );
 }
 }
-export default BinaryTree;
+export default PresentBinaryTree;

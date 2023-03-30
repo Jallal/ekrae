@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 
-class ConverterModule extends React.Component {
+class BinaryModule extends React.Component {
 
         constructor(props) {
             super(props);
@@ -45,4 +45,4 @@ class ConverterModule extends React.Component {
 );
 }
 }
-export default ConverterModule;
+export default BinaryModule;

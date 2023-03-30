@@ -1,11 +1,11 @@
 import React from "react";
 import {BrowserRouter as Router,Route,Routes,Link} from 'react-router-dom';
 import Header from './components/Header'
-import Counter from './components/Counter'
+//import Counter from './components/Counter'
 import Body from "./components/Body";
 import Footer from "./components/Footer";
-import JsonToYaml from "./components/JsonToYaml";
-import BinaryTree from "./components/binaryTree";
+//import JsonToYaml from "./components/JsonToYaml";
+import BinaryTree from "./components/BinaryTree";
 import Home from "./components/Home";
 
 
@@ -37,7 +37,7 @@ return (
     <Routes>
     <Route path ="/" element={<Home/>} />
     <Route path ="/BinaryTree" element={<BinaryTree/>} />
-    <Route path ="/JsonToYaml" element={<JsonToYaml/>} />
+    {/* <Route path ="/JsonToYaml" element={<JsonToYaml/>} /> */}
     </Routes>
       </div>
     </>
