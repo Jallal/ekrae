@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './Header'
 import Footer from "./Footer";
-import BinaryTree from './binaryTree'
+import BinaryTree from './binaryTreeBody'
 
 
 class PresentBinaryTree extends React.Component {

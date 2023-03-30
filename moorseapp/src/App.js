@@ -5,7 +5,7 @@ import Header from './components/Header'
 import Body from "./components/Body";
 import Footer from "./components/Footer";
 //import JsonToYaml from "./components/JsonToYaml";
-import BinaryTree from "./components/BinaryTree";
+import BinaryTree from "./components/BinaryTreeView";
 import Home from "./components/Home";
 
 

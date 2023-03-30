@@ -40,7 +40,12 @@ class BinaryModule extends React.Component {
       render() {
         return (
 <>
-<h3>The <code>cool</code> Class</h3>
+<h3>Kubernates in a nutshell</h3>
+
+<h4>What is Kubernetes?</h4>
+<p>Kubernetes is a platform for running container-based cloud-native applications. It offers different resources which allow for storing information in the cloud instead of a local host. Offers enreprise features like scalability and availability. It orchestrates containers such a way that they are providing the services that arer required in the envirnment where these services are requirted. The solution is based on the borg technology that good has been using for many years in their datacenters</p>
+
+
 </>
 );
 }
