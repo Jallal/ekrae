@@ -126,6 +126,15 @@
     width: 100%;
     margin-bottom: 5px;
   }
+
+  .feature-text-container p {
+    color: #000;
+    text-align: justify;
+    line-height: 1.4;
+    margin-bottom: 5px;
+    margin-right: 20%;
+    margin-left: 10%;
+  }
   
   /* SEARCH FUNCTION */
   

@@ -1,50 +1,29 @@
 import React,{useState} from 'react';
-import mainViewCss from './mainViewCss.css';
+import body from './body.css'
 
 class BinaryModule extends React.Component {
-
-        constructor(props) {
-            super(props);
-            this.state = {value: ''};
-            this.handleChange = this.handleChange.bind(this);
-            this.handleSubmit = this.handleSubmit.bind(this);
-            const sampleData = {
-                name: 'Jason Voorhees',
-                age: 74,
-                hasKilled: true,
-                birthday: 'June 13, 1946',
-              }
-            this.state = {
-                justClicked: sampleData,
-              };
-          }
-        
-          handleChange(event) {
-            console.log('********* handleChange!  '+ event.target.value)
-            this.setState({value: event.target.value});
-        
-            console.log("$$$$$$$$$$$ Resulting Json :"+jsonString);
-            //set the output JSON
-            this.setState({
-                //justClicked: JSON.parse(jsonString)
-              });
-            }
-        
-        
-          handleSubmit(event) {
-
-            console.log('********* handleSubmit!  '+ event)
-            //alert('A name was submitted: ' + this.state.value);
-            event.preventDefault();
-          }
 
       render() {
         return (
 <>
-<h3>Kubernates in a nutshell</h3>
-
-<h4>What is Kubernetes?</h4>
-<p>Kubernetes is a platform for running container-based cloud-native applications. It offers different resources which allow for storing information in the cloud instead of a local host. Offers enreprise features like scalability and availability. It orchestrates containers such a way that they are providing the services that arer required in the envirnment where these services are requirted. The solution is based on the borg technology that good has been using for many years in their datacenters</p>
+<div className="feature-text-container">
+<h1>Kubernates in a nutshell</h1>
+<h2>What is Kubernetes?</h2>
+<p>Kubernetes is a platform for running container-based cloud-native applications. It offers different resources which allow for storing information in the cloud instead of a local host. Offers enreprise features like scalability and availability. It orchestrates containers such a way that they are providing the services that arer required in the envirnment where these services are requirted. The solution is based on the borg technology that good has been using for many years in their datacenters.</p>
+<br></br>
+<p>
+Other container management Solutions includes: 
+<ui>
+  <li>Docker Swarm</li>
+  <li>Rancher</li>
+  <li>Red Hat OpenShift</li> 
+  <li>Google Anthos</li>
+</ui>
+<br></br>
+<h2>What are Containers?</h2>
+<p>A container image includes all dependecies required to run an application. Containers are running instances of container images. To run a conatiner, a container engine is required. Container engines run on top of host operatying system. Docker is a leading solution in containers, RedHat Podman is upcoming. Kubernetes adds cluster features to containers by managing them in pod resources.</p>
+</p>
+</div>
 </>
 );
 }
