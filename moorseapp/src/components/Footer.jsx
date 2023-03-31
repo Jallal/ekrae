@@ -5,9 +5,9 @@ function Footer(){
 
   return (
     <>
-    <footer className='footer'>
-      <p>Copyright 2022</p>
-    </footer>
+    <div className='footer'>
+      <p>Moors Copyright 2023</p>
+    </div>
     </>
   );
 };

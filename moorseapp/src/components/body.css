@@ -31,17 +31,18 @@
   .page-wrapper {
     width: 100%;
     height: auto;
-    display: flex;
-    flex-direction: column-reverse;
+    /* display: flex;
+    flex-direction: column-reverse; */
   }
   
-  .nav-wrapper {
+  /* .nav-wrapper {
     width: 100%;
-    position: -webkit-sticky; /* Safari */
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
     background-color: #fff;
   }
+  */
   
   .grad-bar {
     width: 100%;

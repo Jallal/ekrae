@@ -5,18 +5,27 @@
   
   body {
 	font-family: system-ui, sans-serif;
-	background: whitesmoke;
+	background: red;
 	min-height: 100vh;
   }
   
   nav {
 	position: relative;
 	white-space: nowrap;
-	background: white;
+	background:blue;
 	color: black;
 	padding: var(--underline-height) 0;
 	margin: 2em 0;
 	box-shadow: 0 1em 2em rgba(yellow, 0.05);
+  }
+
+  .nav-wrapper {
+    width: 100%;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color:red;
+	background: red;
   }
   
   .underline {
