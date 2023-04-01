@@ -1,16 +1,8 @@
 import React from 'react';
-import body from './body.css';
+import body from './Sidebar.css';
+import { slide as Menu } from 'react-burger-menu';
 
 class Header extends React.Component {
-
-    // handleClick = (e) => {
-    //         console.log('click!' + e)
-    //         var underlines = document.querySelectorAll(".underline");
-    //         for (var i = 0; i < underlines.length; i++) {
-    //         underlines[i].style.transform = 'translate3d(' + e * 100 + '%,0,0)';
-    //         console.log('Changing color :' + underlines[i].style.transform )
-    //         }
-    //     }
 
     handleClick = () => {
         console.log('click baby!')
@@ -42,20 +34,24 @@ menuToggle.addEventListener('click', () => {
     return (
 <>
 <nav>
-      {/* <div className="underline"></div>
-      <div className="underline"></div>
-      <div className="underline"></div>
-      <a onClick={() => this.handleClick(0)}>Home</a>
-      <a onClick={() => this.handleClick(1)}>Courses</a>
-      <a onClick={() => this.handleClick(2)}>Code With Me</a>
-      <a onClick={() => this.handleClick(3)}>All Access</a>
-      <a onClick={() => this.handleClick(4)}>About</a> */}
-
-
-     <div className="nav-wrapper">
+  <div className="nav-wrapper">
   <div className="grad-bar"></div>
-  <nav className="navbar">
-    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c8/Bluestar_%28bus_company%29_logo.svg/1280px-Bluestar_%28bus_company%29_logo.svg.png" alt="Company Logo"></img>
+  <nav className="navbar">    
+    {/* side menu for option*/}
+    {/* <Menu>
+      <a className="menu-item" href="/">
+        Home
+      </a>
+      <a className="menu-item" href="/salads">
+        Salads
+      </a>
+      <a className="menu-item" href="/pizzas">
+        Pizzas
+      </a>
+      <a className="menu-item" href="/desserts">
+        Desserts
+      </a>
+    </Menu> */}
     <div className="menu-toggle" id="mobile-menu" onClick={() => this.handleClick()}>
       <span className="bar"></span>
       <span className="bar"></span>
