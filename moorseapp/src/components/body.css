@@ -354,3 +354,12 @@
     display: none;
    }
   } 
+  code-section {
+    background: #a8e;
+    color:black;
+    text-align: center;
+    line-height: 1.4;
+}
+
+
+
