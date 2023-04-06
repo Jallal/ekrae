@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
 import body from './body.css'
+import Sidenav from './Sidenav.js';
 
 class BinaryModule extends React.Component {
 

@@ -7,13 +7,14 @@ import Footer from "./components/Footer";
 //import JsonToYaml from "./components/JsonToYaml";
 import BinaryTree from "./components/BinaryTreeView";
 import Home from "./components/Home";
-import Sidebar from "./components/Sidebar.js";
+import Sidenav from './components/Sidenav.js';
 
 
 function App () {
 return (
     <>
     <div className="main">
+    <Sidenav/>
     {/* <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} /> */}
     {/* <nav>
           <ul>

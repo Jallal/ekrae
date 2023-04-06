@@ -1,13 +1,20 @@
 {
   "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@mui/icons-material": "^5.11.16",
+    "@mui/material": "^5.11.16",
     "@progress/kendo-react-buttons": "^5.12.0",
     "@progress/kendo-react-layout": "^5.12.0",
+    "bootstrap": "4.4.1",
+    "build": "^0.1.4",
     "js-yaml": "^4.1.0",
     "json-beautify": "^1.1.1",
     "or": "^0.2.0",
     "react": "^18.2.0",
     "react-burger-menu": "^3.0.9",
     "react-dom": "^18.2.0",
+    "react-pro-sidebar": "^1.0.0",
     "react-router-dom": "^6.9.0",
     "yaml": "^2.2.1"
   },

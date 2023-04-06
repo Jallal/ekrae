@@ -1,10 +1,11 @@
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Lato', 'Arial', sans-serif;
     background-color: #fff;
-  }
+    transition: margin-left .5s;
+  }  */
   
   /* HEADINGS */
   
@@ -29,8 +30,10 @@
   /* BASIC SETUP */
   
   .page-wrapper {
-    width: 100%;
+    width: auto;
     height: auto;
+    margin-left: 150px;
+    margin-right: 150px;
     /* display: flex;
     flex-direction: column-reverse; */
   }
@@ -135,8 +138,8 @@
     text-align: justify;
     line-height: 1.4;
     margin-bottom: 5px;
-    margin-right: 20%;
-    margin-left: 10%;
+    margin-left: 150px;
+    margin-right: 100px;
   }
   
   /* SEARCH FUNCTION */
@@ -269,7 +272,7 @@
   
     /* Mobile Devices - Phones/Tablets */
   
-  @media only screen and (max-width: 720px) { 
+  @media only screen and (max-width: 750px) { 
     .features {
       flex-direction: column;
       padding: 50px;

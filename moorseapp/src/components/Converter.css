@@ -1,4 +1,4 @@
-/*Boxes for the converter tool*/
+/* Boxes for the converter tool
 
 
 .float-container {
@@ -16,7 +16,6 @@
     width: 50%;
     float: left;
     padding: 20px;
-    /* border: 2px solid red; */
     box-sizing: border-box;
 } 
 
@@ -34,7 +33,7 @@
 } */
  
 
-* {
+/* * {
     box-sizing: border-box;
   } 
   
@@ -148,4 +147,4 @@
     top: 50%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
-}
+} */

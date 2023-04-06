@@ -2,33 +2,28 @@ import React from 'react';
 import body from './body.css'
 import { TileLayout } from "@progress/kendo-react-layout";
 
-
 class Body extends React.Component {
 
-    handleClick = (e) => {
-        const searchIcon = document.querySelector('#search-icon');
-        const navElements = document.querySelectorAll('.nav');
-        const searchInput = document.querySelector('.search-input');
-        const menuToggle = document.querySelector('.menu-toggle');
+//     handleClick = (e) => {
+//         const searchIcon = document.querySelector('#search-icon');
+//         const navElements = document.querySelectorAll('.nav');
+//         const searchInput = document.querySelector('.search-input');
+//         const menuToggle = document.querySelector('.menu-toggle');
 
-searchIcon.addEventListener('click', () => {
-  navElements.forEach((element) => {
-    element.classList.toggle('search');
-    element.classList.toggle('no-search');
-  });
-  searchInput.classList.toggle('search-active');
-});
+// searchIcon.addEventListener('click', () => {
+//   navElements.forEach((element) => {
+//     element.classList.toggle('search');
+//     element.classList.toggle('no-search');
+//   });
+//   searchInput.classList.toggle('search-active');
+// });
 
-menuToggle.addEventListener('click', () => {
-  navElements.forEach((element) => {
-    element.classList.toggle('mobile-nav');
-  });
-  menuToggle.classList.toggle('is-active');
-});
-
-    }
-
-
+// menuToggle.addEventListener('click', () => {
+//   navElements.forEach((element) => {
+//     element.classList.toggle('mobile-nav');
+//   });
+//   menuToggle.classList.toggle('is-active');
+// });
       render() {
         return (
 <>
