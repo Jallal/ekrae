@@ -15,6 +15,7 @@ return (
     <>
     <div className="main">
     <Sidenav/>
+    <Header/>
     {/* <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} /> */}
     {/* <nav>
           <ul>
