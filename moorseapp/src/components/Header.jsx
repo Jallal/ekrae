@@ -37,7 +37,7 @@ menuToggle.addEventListener('click', () => {
   <div className='big-title'>Moors Tech</div>
   <div className="grad-bar"></div>
   <nav className="navbar">
-    {/* <img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c8/Bluestar_%28bus_company%29_logo.svg/1280px-Bluestar_%28bus_company%29_logo.svg.png" alt="Company Logo"></img> */}
+    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c8/Bluestar_%28bus_company%29_logo.svg/1280px-Bluestar_%28bus_company%29_logo.svg.png" alt="Company Logo"></img>
     
     <div className="menu-toggle" id="mobile-menu" onClick={() => this.handleClick()}>
       <span className="bar"></span>
@@ -45,8 +45,10 @@ menuToggle.addEventListener('click', () => {
       <span className="bar"></span>
     </div>
     <ul className="nav no-search" onClick={() => this.handleClick()}>
-      <li className="nav-item"><a href="/">Subscribe</a></li>
-      <li className="nav-item"><a href="#">Contact Us</a></li>
+    <li className="nav-item"><a href="#">Contact Us</a></li>
+      <li className="nav-item"><a href="#">Get Started</a></li>
+      <li className="nav-item"><a href="#">Sign In</a></li>
+      <li className="nav-item"><a href="#">Subscribe</a></li>
       <i className="fas fa-search" id="search-icon"></i>
       <input className="search-input" type="text" placeholder="Search.."></input>
     </ul>

@@ -1,6 +1,6 @@
 import React from 'react';
 import body from './body.css'
-import { TileLayout } from "@progress/kendo-react-layout";
+// import { TileLayout } from "@progress/kendo-react-layout";
 
 class Body extends React.Component {
 

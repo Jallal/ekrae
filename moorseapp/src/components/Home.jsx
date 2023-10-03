@@ -10,7 +10,7 @@ import JsonToYaml from "./JsonToYaml";
 function Home () {
 return (
     <>
-    {/* <Header/> */}
+    <Header/>
     <Body/>
     <Footer/>
     </>

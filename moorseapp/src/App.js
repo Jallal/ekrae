@@ -14,8 +14,8 @@ function App () {
 return (
     <>
     <div className="main">
-    <Sidenav/>
-    <Header/>
+    {/* <Sidenav/> */}
+    {/* <Header/> */}
     {/* <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} /> */}
     {/* <nav>
           <ul>
